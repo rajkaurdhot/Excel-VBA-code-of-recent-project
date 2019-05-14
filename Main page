@@ -1,0 +1,827 @@
+Sub Module_Selection()
+'If (Sheet1.Range("N10").Value) = "" And Sheet1.Range("N12").Value = "" And Sheet1.Range("N14").Value = "" And Sheet1.Range("N16").Value = "" Then
+'Sheets("Main_Page").Select
+'Else
+ '  Sheets("SummaryPage").Select
+ '  End If
+ Sheet6.Range("C7").Value = Sheet1.Range("N12").Value
+ Sheet6.Range("C8").Value = Sheet1.Range("N10").Value
+ Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+  If (Sheet1.Range("C8").Value = False) Then
+    Sheet6.Rows("14:14").EntireRow.Hidden = True
+  Else
+  Sheet6.Rows("14:14").EntireRow.Hidden = False
+  End If
+      If (Sheet1.Range("C9").Value = False) Then
+         Sheet6.Rows("15:15").EntireRow.Hidden = True
+ Else
+ Sheet6.Rows("15:15").EntireRow.Hidden = False
+   End If
+    If (Sheet1.Range("C10").Value = False) Then
+  Sheet6.Rows("16:16").EntireRow.Hidden = True
+       Else
+        Sheet6.Rows("16:16").EntireRow.Hidden = False
+      End If
+   If (Sheet1.Range("C11").Value = False) Then
+  Sheet6.Rows("17:17").EntireRow.Hidden = True
+          Else
+        Sheet6.Rows("17:17").EntireRow.Hidden = False
+     End If
+   If (Sheet1.Range("C12").Value = False) Then
+  Sheet6.Rows("18:18").EntireRow.Hidden = True
+          Else
+       Sheet6.Rows("18:18").EntireRow.Hidden = False
+      End If
+    If (Sheet1.Range("C13").Value = False) Then
+  Sheet6.Rows("19:19").EntireRow.Hidden = True
+          Else
+       Sheet6.Rows("19:19").EntireRow.Hidden = False
+      End If
+   If (Sheet1.Range("C14").Value = False) Then
+  Sheet6.Rows("20:20").EntireRow.Hidden = True
+  'Sheet6.Rows("9:9").EntireRow.Hidden = True
+     'Sheet6.Range("C9").Value = "-"
+         Else
+       Sheet6.Rows("20:20").EntireRow.Hidden = False
+       'Sheet6.Range("N16").Value = "1"
+       'Sheet6.Rows("9:9").EntireRow.Hidden = False
+        End If
+    If (Sheet1.Range("C15").Value = False) Then
+  Sheet6.Rows("21:21").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("21:21").EntireRow.Hidden = False
+      End If
+      If (Sheet1.Range("C16").Value = False) Then
+  Sheet6.Rows("22:22").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("22:22").EntireRow.Hidden = False
+      End If
+   If (Sheet1.Range("C17").Value = False) Then
+  Sheet6.Rows("23:23").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("23:23").EntireRow.Hidden = False
+      End If
+      If (Sheet1.Range("C18").Value = False) Then
+  Sheet6.Rows("24:24").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("24:24").EntireRow.Hidden = False
+      End If
+   If (Sheet1.Range("C19").Value = False) Then
+  Sheet6.Rows("25:25").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("25:25").EntireRow.Hidden = False
+      End If
+      If (Sheet1.Range("C20").Value = False) Then
+  Sheet6.Rows("26:26").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("26:26").EntireRow.Hidden = False
+      End If
+      If (Sheet1.Range("C21").Value = False) Then
+  Sheet6.Rows("27:27").EntireRow.Hidden = True
+         Else
+       Sheet6.Rows("27:27").EntireRow.Hidden = False
+      End If
+         ' Sub Addthreepages()
+Dim resst, a, c, d, e, f As String
+Dim h, i, j, k, l, m, n, o, p, q, b, r, s, t, u, v, w, X As Variant
+h = 0.50: i = 0.69: j = 0.94: k = 0.23: l = 0.20: m = 0.18: n = 0.15: o = 0.15: p = 0.19: q = 0.08
+a = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 4, True)
+b = Application.VLookup(Sheet1.Range("N10").Value, Sheet4.Range("B22:C42").Value, 2, True)
+c = Sheet4.Range("K19").Value
+d = Sheet4.Range("F19").Value
+e = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:D15").Value, 2, True)
+'f = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 3, True)
+If (Sheet4.Range("F19").Value <= 25) Then
+ Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+ Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+Firstmodule
+Firstmoduleone
+Firstmoduletwo
+Firstmodulethree
+Firstmodulefour
+ElseIf (Sheet4.Range("F19").Value <= 50) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+second
+Secondone
+Secondtwo
+Secondthree
+Secondfour
+ElseIf (Sheet4.Range("F19").Value <= 100) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+Third
+Thirdone
+Threetwo
+Thirdthree
+Thirdfour
+ElseIf (Sheet4.Range("F19").Value <= 200) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+Fourthmodule
+Fourthmoduleone
+Fourthmoduletwo
+Fourthmodulethree
+Fourthmodulefour
+ElseIf (Sheet4.Range("F19").Value <= 400) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+Fifthmodule
+Fifthone
+Fifthtwo
+Fifththree
+Fifthfour
+ElseIf (Sheet4.Range("F19").Value <= 750) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+sixthmodule
+Sixthone
+sixthtwo
+Sixththree
+loopsixth
+ElseIf (Sheet4.Range("F19").Value <= 1500) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+seventhmodule
+sevenloopnew
+loopseventhbefore
+loopseventh
+loopseventhafter
+ElseIf (Sheet4.Range("F19").Value <= 2500) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+Eightmodule
+Eightone
+Eighttwo
+loopeightbefore
+loopeight
+loopaftereight
+ElseIf (Sheet4.Range("F19").Value <= 5000) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+Ninemodule
+Ninemoduleone
+ninemod
+loopninebefore
+loopnine
+loopnineafter
+ElseIf (Sheet4.Range("F19").Value <= 100000) Then
+Sheet1.Range("N12").Value = Sheet6.Range("C7").Value
+Sheet1.Range("N10").Value = Sheet6.Range("C8").Value
+Sheet6.Range("C6").Value = Sheet1.Range("N8").Value
+ 
+ten
+tenone
+tenmod
+loopten
+loopafterten
+Tenlast
+End If
+Mobileapp
+  
+
+Finalresult
+   ' discounthiding
+    'ActiveWorkbook.Save
+    '  totaldiscount
+      End Sub
+    
+    
+      
+ Sub Dicount()
+If (Sheet1.Range("M14").Value = False) Then
+ Sheet6.Range("F10:G28").EntireColumn.Hidden = True
+ Sheet1.Range("N14").Select
+ Sheet1.Range("O14").Value = ""
+  Sheet1.Range("N14").Value = ""
+  With Selection.Validation
+        .Delete
+        .Add Type:=xlValidateInputOnly, AlertStyle:=xlValidAlertStop, Operator _
+        :=xlBetween
+        .IgnoreBlank = True
+        .InCellDropdown = True
+        .InputTitle = ""
+        .ErrorTitle = ""
+        .InputMessage = ""
+        .ErrorMessage = ""
+        .ShowInput = True
+        .ShowError = True
+    End With
+    ActiveSheet.ClearCircles
+    Sheet1.Range("N14").Value = ""
+   
+     'Sheet1.Range("N14").Value = ""
+ 
+    With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .color = 5296274
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    Range("N14").Select
+    Selection.ClearComments
+    'Range("N10").Select
+    Else
+    
+    Sheet1.Range("O14").Value = "%"
+     Sheet1.Range("N14").Select
+     Sheet6.Range("F10:G28").EntireColumn.Hidden = False
+         'Sheet1.Range("N16").Value = "1"
+       With Selection.Interior
+        .Pattern = xlSolid
+        .PatternColorIndex = xlAutomatic
+        .ThemeColor = xlThemeColorDark1
+        .TintAndShade = 0
+        .PatternTintAndShade = 0
+    End With
+    'ActiveSheet.Shapes.Range(Array("Button 66")).Select
+ With Selection.Validation
+        .Delete
+        .Add Type:=xlValidateList, AlertStyle:=xlValidAlertStop, Operator:= _
+        xlBetween, Formula1:="=Admin_page!$G$51:$G$56"
+        .IgnoreBlank = True
+        .InCellDropdown = True
+        .InputTitle = ""
+        .ErrorTitle = ""
+        .InputMessage = ""
+        .ErrorMessage = ""
+        .ShowInput = True
+        .ShowError = True
+    End With
+        Sheet1.Range("N14").Select
+   Sheet1.Range("N14").AddComment
+    Sheet1.Range("N14").Comment.Visible = False
+   Sheet1.Range("N14").Comment.Text Text:="Select Discount" & Chr(10) & ""
+    Sheet1.Range("N12").Select
+    End If
+    End Sub
+       
+    
+    
+Sub Mobileapp()
+Dim resst1, resst2, a, c, d, e, f, g, resst3, resst4, resst5, resst6, resst7, resst8, resst9, resst10, resst11, resst12, resst13, resst14 As String
+Dim b As Variant
+'a = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("B51:E53").Value, 4, True)
+'c = Sheet4.Range("K19").Value
+c = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("B51:E53").Value, 3, True)
+d = Sheet4.Range("F19").Value
+'e = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:D15").Value, 2, True)
+'f = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 3, True)
+If (Sheet4.Range("F19").Value <= 300) Then
+'b = Sheet4.Range("C22").Value
+
+a = Application.VLookup(d, Sheet4.Range("B51:E54").Value, 4, True)
+Sheet6.Range("E27").Value = Round(a, 0)
+Sheet6.Range("D27").Value = Round(a / 4 * 1.05, 0)
+Sheet6.Range("C27").Value = Round(a / 12 * 1.1, 0)
+
+ElseIf (Sheet4.Range("F19").Value <= 500) Then
+ 
+a = Application.VLookup(d, Sheet4.Range("B51:E54").Value, 4, True)
+Sheet6.Range("E27").Value = Round(a, 0)
+Sheet6.Range("D27").Value = Round(a / 4 * 1.05, 0)
+Sheet6.Range("C27").Value = Round(a / 12 * 1.1, 0)
+
+ElseIf (Sheet4.Range("F19").Value <= 4000) Then
+a = Application.VLookup(d, Sheet4.Range("B51:E54").Value, 3, True)
+b = a * Sheet4.Range("F19").Value
+Sheet6.Range("E27").Value = Round(b, 0)
+Sheet6.Range("D27").Value = Round(b / 4 * 1.05, 0)
+Sheet6.Range("C27").Value = Round(b / 12 * 1.1, 0)
+
+ElseIf (Sheet4.Range("F19").Value > 4000) Then
+a = Application.VLookup(d, Sheet4.Range("B51:E54").Value, 4, True)
+Sheet6.Range("E27").Value = Round(a, 0)
+Sheet6.Range("D27").Value = Round(a / 4 * 1.05, 0)
+Sheet6.Range("C27").Value = Round(a / 12 * 1.1, 0)
+
+End If
+ End Sub
+ 
+ 
+  
+Sub Finalresult()
+  Dim aa, bb, cc, rr As Variant
+'a = Application.VLookup(Sheet6.Range("C6").Value, Sheet4.Range("B22:P42").Value, 1, True)
+aa = Sheet6.Range("C8").Value
+'pp = Sheet6.Range("C7").Value
+bb = Sheet1.Range("N10").Value
+
+
+
+cc = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 3, False)
+dd = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 4, False)
+ee = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 5, False)
+ff = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 6, False)
+gg = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 7, False)
+hh = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 8, False)
+ii = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 9, False)
+jj = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 10, False)
+kk = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 11, False)
+ll = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 12, False)
+mm = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 13, False)
+nn = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 14, False)
+oo = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 15, False)
+'pp = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 17, False)
+ 'Sheet1.Range("N14").Value = ""
+'If (Sheet1.Range("N14").Value = "") Then
+
+'Sheets("Main_Page").Select
+
+ 'MsgBox " Please fill in empty spaces"
+ 
+ 'End If
+ 
+ 
+'qq = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 16, False)
+If (aa = bb) Then
+'Sheet1.Range("N14").Value = ""
+If (Sheet1.Range("N12").Value = "" And Sheet1.Range("N8").Value = "" And Sheet1.Range("N14").Value = "" And Sheet1.Range("N10").Value = "" And Sheet1.Range("N16").Value = "" And Sheet1.Range("C8").Value = "False" And Sheet1.Range("C9").Value = "False" And Sheet1.Range("C10").Value = "False" And Sheet1.Range("C11").Value = "False" And Sheet1.Range("C12").Value = "False" And Sheet1.Range("C13").Value = "False" And Sheet1.Range("C14").Value = "False" And Sheet1.Range("C15").Value = "False" And Sheet1.Range("C16").Value = "False" And Sheet1.Range("C17").Value = "False" And Sheet1.Range("C18").Value = "False" And Sheet1.Range("C19").Value = "False" And Sheet1.Range("C20").Value = "False") Then
+
+'if (Sheet1.Range("N14").Value = "") Then
+
+
+
+Sheets("Main_Page").Select
+ Sheet1.Range("N14").Value = ""
+ MsgBox " Please fill in empty spaces"
+ 
+
+
+ElseIf (Sheet1.Range("N14").Value = "") And (Sheet1.Range("M14").Value = True) Then
+
+MsgBox "Please enter the discount"
+
+Else
+If (Sheet1.Range("N14").Value <> "") And (Sheet1.Range("M14").Value = True) And Sheet1.Range("N8").Value <> "" And Sheet1.Range("N10").Value <> "" And Sheet1.Range("N12").Value <> "" Then
+'MsgBox "Please fill empty spaces"
+   Sheets("SummaryPage").Select
+   
+  Sheet6.Range("E10").Value = Sheet1.Range("N5").Value
+' If (Sheet6.Rows("14:28").EntireRow.Hidden = False) Then
+ 'If (Sheet1.Range("M14").Value = True) And (Sheet1.Range("N14").Value <> "") Then
+
+ Sheet6.Range("E14").Value = Round(cc * 12, 0)
+ 
+  'Sheet6.Range("C14").Value = Sheet4.Range("D22").Value
+
+Sheet6.Range("E15").Value = Round(dd * 12, 0)
+Sheet6.Range("E16").Value = Round(ee * 12, 0)
+Sheet6.Range("E17").Value = Round(ff * 12, 0)
+Sheet6.Range("E18").Value = Round(gg * 12, 0)
+Sheet6.Range("E19").Value = Round(hh * 12, 0)
+'If (Sheet6.Range("C9").Value <> 0) Then
+If (Sheet1.Range("C14").Value = True) Then
+rr = ii * Sheet6.Range("C9").Value
+Sheet6.Range("E20").Value = Round(rr * 12, 0)
+Else
+rr = ii
+Sheet6.Range("E20").Value = Round(rr * 12, 0)
+End If
+'End If
+Sheet6.Range("E21").Value = Round(jj * 12, 0)
+Sheet6.Range("E22").Value = Round(kk * 12, 0)
+Sheet6.Range("E23").Value = Round(ll * 12, 0)
+Sheet6.Range("E24").Value = Round(mm * 12, 0)
+Sheet6.Range("E25").Value = Round(nn * 12, 0)
+Sheet6.Range("E26").Value = Round(oo * 12, 0)
+
+'Sheet6.Range("E28").Value = Round(pp * 12 / 1.1, 0)
+'Sheet6.Range("C27").Value = Round(pp, 0)
+'Sheet1.Range("E14").Value = Sheet6.Range("F11").Value
+Sheet6.Range("F14").Value = Sheet6.Range("E14").Value - Sheet6.Range("E14").Value * Sheet6.Range("F11").Value * 1 / 100
+Sheet6.Range("F15").Value = Sheet6.Range("E15").Value - (Sheet6.Range("E15").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F16").Value = Sheet6.Range("E16").Value - (Sheet6.Range("E16").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F17").Value = Sheet6.Range("E17").Value - (Sheet6.Range("E17").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F18").Value = Sheet6.Range("E18").Value - (Sheet6.Range("E18").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F19").Value = Sheet6.Range("E19").Value - (Sheet6.Range("E19").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F20").Value = Sheet6.Range("E20").Value - (Sheet6.Range("E20").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F21").Value = Sheet6.Range("E21").Value - (Sheet6.Range("E21").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F22").Value = Sheet6.Range("E22").Value - (Sheet6.Range("E22").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F23").Value = Sheet6.Range("E23").Value - (Sheet6.Range("E23").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F24").Value = Sheet6.Range("E24").Value - (Sheet6.Range("E24").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F25").Value = Sheet6.Range("E25").Value - (Sheet6.Range("E25").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F26").Value = Sheet6.Range("E26").Value - (Sheet6.Range("E26").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F27").Value = Sheet6.Range("E27").Value - (Sheet6.Range("E27").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F28").Value = Sheet6.Range("E28").Value - (Sheet6.Range("E28").Value * Sheet6.Range("F11").Value * (1 / 100))
+
+
+ ElseIf Sheet1.Range("N10").Value <> "" And Sheet1.Range("N12").Value <> "" And Sheet1.Range("N8").Value <> "" Then
+ 
+ 
+ Sheets("SummaryPage").Select
+   
+  
+' If (Sheet6.Rows("14:28").EntireRow.Hidden = False) Then
+ 'If (Sheet1.Range("M14").Value = True) And (Sheet1.Range("N14").Value <> "") Then
+
+ Sheet6.Range("E14").Value = Round(cc * 12, 0)
+ Sheet6.Range("E10").Value = Sheet1.Range("N5").Value
+
+
+  
+  
+  
+  'Sheet6.Range("C14").Value = Sheet4.Range("D22").Value
+
+Sheet6.Range("E15").Value = Round(dd * 12, 0)
+Sheet6.Range("E16").Value = Round(ee * 12, 0)
+Sheet6.Range("E17").Value = Round(ff * 12, 0)
+Sheet6.Range("E18").Value = Round(gg * 12, 0)
+Sheet6.Range("E19").Value = Round(hh * 12, 0)
+'If (Sheet6.Range("C9").Value <> 0) Then
+If (Sheet1.Range("C14").Value = True) Then
+rr = ii * Sheet6.Range("C9").Value
+Sheet6.Range("E20").Value = Round(rr * 12, 0)
+Else
+rr = ii
+Sheet6.Range("E20").Value = Round(rr * 12, 0)
+End If
+'End If
+Sheet6.Range("E21").Value = Round(jj * 12, 0)
+Sheet6.Range("E22").Value = Round(kk * 12, 0)
+Sheet6.Range("E23").Value = Round(ll * 12, 0)
+Sheet6.Range("E24").Value = Round(mm * 12, 0)
+Sheet6.Range("E25").Value = Round(nn * 12, 0)
+Sheet6.Range("E26").Value = Round(oo * 12, 0)
+'heet6.Range("E28").Value = Round(pp * 12 / 1.1, 0)
+'Sheet6.Range("C27").Value = Round(pp, 0)
+'Sheet1.Range("E14").Value = Sheet6.Range("F11").Value
+Sheet6.Range("F14").Value = Sheet6.Range("E14").Value - Sheet6.Range("E14").Value * Sheet6.Range("F11").Value * 1 / 100
+Sheet6.Range("F15").Value = Sheet6.Range("E15").Value - Sheet6.Range("E15").Value * Sheet6.Range("F11").Value * (1 / 100)
+Sheet6.Range("F16").Value = Sheet6.Range("E16").Value - (Sheet6.Range("E16").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F17").Value = Sheet6.Range("E17").Value - (Sheet6.Range("E17").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F18").Value = Sheet6.Range("E18").Value - (Sheet6.Range("E18").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F19").Value = Sheet6.Range("E19").Value - (Sheet6.Range("E19").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F20").Value = Sheet6.Range("E20").Value - (Sheet6.Range("E20").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F21").Value = Sheet6.Range("E21").Value - (Sheet6.Range("E21").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F22").Value = Sheet6.Range("E22").Value - (Sheet6.Range("E22").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F23").Value = Sheet6.Range("E23").Value - (Sheet6.Range("E23").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F24").Value = Sheet6.Range("E24").Value - (Sheet6.Range("E24").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F25").Value = Sheet6.Range("E25").Value - (Sheet6.Range("E25").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F26").Value = Sheet6.Range("E26").Value - (Sheet6.Range("E26").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F27").Value = Sheet6.Range("E27").Value - (Sheet6.Range("E27").Value * Sheet6.Range("F11").Value * (1 / 100))
+Sheet6.Range("F28").Value = Sheet6.Range("E28").Value - (Sheet6.Range("E28").Value * Sheet6.Range("F11").Value * (1 / 100))
+End If
+End If
+  End If
+ End Sub
+         
+         
+Sub finaldiscount()
+ Dim aa, bb, cc As Variant
+'a = Application.VLookup(Sheet6.Range("C6").Value, Sheet4.Range("B22:P42").Value, 1, True)
+aa = Sheet6.Range("C8").Value
+pp = Sheet6.Range("C9").Value
+bb = Sheet1.Range("N10").Value
+cc = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 3, False)
+dd = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 4, False)
+ee = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 5, False)
+ff = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 6, False)
+gg = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 7, False)
+hh = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 8, False)
+ii = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 9, False)
+jj = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 10, False)
+kk = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 11, False)
+ll = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 12, False)
+mm = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 13, False)
+nn = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 14, False)
+oo = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 15, False)
+'qq = Application.VLookup(Sheet6.Range("C8").Value, Sheet4.Range("B22:P42").Value, 16, False)
+If (a = b) Then
+Sheet6.Range("C14").Value = cc - cc * Sheet6.Range("F11").Value
+Sheet6.Range("C15").Value = dd - dd * Sheet6.Range("F11").Value
+Sheet6.Range("C16").Value = ee - ee * Sheet6.Range("F11").Value
+Sheet6.Range("C17").Value = ff - ff * Sheet6.Range("F11").Value
+Sheet6.Range("C18").Value = gg - gg * Sheet6.Range("F11").Value
+Sheet6.Range("C19").Value = hh - hh * Sheet6.Range("F11").Value
+Sheet6.Range("C20").Value = ii - ii * Sheet6.Range("F11").Value
+Sheet6.Range("C21").Value = jj - jj * Sheet6.Range("F11").Value
+Sheet6.Range("C22").Value = kk - kk * Sheet6.Range("F11").Value
+Sheet6.Range("C23").Value = ll - ll * Sheet6.Range("F11").Value
+Sheet6.Range("C24").Value = mm - mm * Sheet6.Range("F11").Value
+Sheet6.Range("C25").Value = nn - nn * Sheet6.Range("F11").Value
+Sheet6.Range("C26").Value = oo - oo * Sheet6.Range("F11").Value
+Sheet6.Range("C27").Value = pp - pp * Sheet6.Range("F11").Value
+End If
+      End Sub
+           Sub totaldiscount()
+    Sheet6.Range("F28").Value = Sheet6.Range("E28").Value * Sheet6.Range("F11").Value
+     End Sub
+     Sub Basepriceset()
+     'Sheets("Baseprice_Setup").Select
+     End Sub
+     
+     
+Sub ten()
+Dim resst1, resst2, a, c, d, e, f, g, resst3, resst4, resst5, resst6, resst7, resst8, resst9, resst10, resst11, resst12, resst13, resst14 As String
+Dim h, i, j, k, l, m, n, o, p, q, b, r, s, t, u, v, w, X As Variant
+h = 0.5: i = 0.25: j = 0.24: k = 0.23: l = 0.2: m = 0.18: n = 0.15: o = 0.13: p = 0.1: q = 0.09
+a = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 4, True)
+b = Application.VLookup(Sheet1.Range("N10").Value, Sheet4.Range("B22:C42").Value, 2, True)
+c = Sheet4.Range("K19").Value
+d = Sheet4.Range("F19").Value
+e = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:D15").Value, 2, True)
+f = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 3, True)
+If (Sheet1.Range("N10").Value = Sheet4.Range("B22").Value) Then
+b = Sheet4.Range("C22").Value
+If (Sheet4.Range("F19").Value <= 5550) Then
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500
+resst1 = a * b + h * 25 + i * 25 +n * 750 + o * 1500 + p * X
+
+Sheet4.Range("E22").Value = resst1
+Sheet4.Range("F22").Value = resst3
+
+Else
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500: Y = X - 2500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+Sheet4.Range("D22").Value = resst1
+Sheet4.Range("E22").Value = resst2
+Sheet4.Range("F22").Value = resst3
+Sheet4.Range("G22").Value = resst4
+Sheet4.Range("H22").Value = resst5
+Sheet4.Range("I22").Value = resst6
+Sheet4.Range("J22").Value = resst7
+Sheet4.Range("K22").Value = resst8
+Sheet4.Range("L22").Value = resst9
+Sheet4.Range("M22").Value = resst10
+Sheet4.Range("N22").Value = resst11
+Sheet4.Range("O22").Value = resst12
+Sheet4.Range("P22").Value = resst13
+Sheet4.Range("Q22").Value = resst14
+End If
+ElseIf (Sheet1.Range("N10").Value = Sheet4.Range("B23").Value) Then
+b = Sheet4.Range("C23").Value
+If (Sheet4.Range("F19").Value <= 5550) Then
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+Sheet4.Range("D23").Value = resst1
+Sheet4.Range("E23").Value = resst2
+Sheet4.Range("F23").Value = resst3
+Sheet4.Range("G23").Value = resst4
+Sheet4.Range("H23").Value = resst5
+Sheet4.Range("I23").Value = resst6
+Sheet4.Range("J23").Value = resst7
+Sheet4.Range("K23").Value = resst8
+Sheet4.Range("L23").Value = resst9
+Sheet4.Range("M23").Value = resst10
+Sheet4.Range("N23").Value = resst11
+Sheet4.Range("O23").Value = resst12
+Sheet4.Range("P23").Value = resst13
+Sheet4.Range("Q23").Value = resst14
+Else
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500: Y = X - 2500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+Sheet4.Range("D23").Value = resst1
+Sheet4.Range("E23").Value = resst2
+Sheet4.Range("F23").Value = resst3
+Sheet4.Range("G23").Value = resst4
+Sheet4.Range("H23").Value = resst5
+Sheet4.Range("I23").Value = resst6
+Sheet4.Range("J23").Value = resst7
+Sheet4.Range("K23").Value = resst8
+Sheet4.Range("L23").Value = resst9
+Sheet4.Range("M23").Value = resst10
+Sheet4.Range("N23").Value = resst11
+Sheet4.Range("O23").Value = resst12
+Sheet4.Range("P23").Value = resst13
+Sheet4.Range("Q23").Value = resst14
+End If
+
+ElseIf (Sheet1.Range("N10").Value = Sheet4.Range("B27").Value) Then
+b = Sheet4.Range("C27").Value
+If (Sheet4.Range("F19").Value <= 5550) Then
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+Sheet4.Range("D27").Value = resst1
+Sheet4.Range("E27").Value = resst2
+Sheet4.Range("F27").Value = resst3
+Sheet4.Range("G27").Value = resst4
+Sheet4.Range("H27").Value = resst5
+Sheet4.Range("I27").Value = resst6
+Sheet4.Range("J27").Value = resst7
+Sheet4.Range("K27").Value = resst8
+Sheet4.Range("L27").Value = resst9
+Sheet4.Range("M27").Value = resst10
+Sheet4.Range("N27").Value = resst11
+Sheet4.Range("O27").Value = resst12
+Sheet4.Range("P27").Value = resst13
+Sheet4.Range("Q27").Value = resst14
+Else
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500: Y = X - 2500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+Sheet4.Range("D27").Value = resst1
+Sheet4.Range("E27").Value = resst2
+Sheet4.Range("F27").Value = resst3
+Sheet4.Range("G27").Value = resst4
+Sheet4.Range("H27").Value = resst5
+Sheet4.Range("I27").Value = resst6
+Sheet4.Range("J27").Value = resst7
+Sheet4.Range("K27").Value = resst8
+Sheet4.Range("L27").Value = resst9
+Sheet4.Range("M27").Value = resst10
+Sheet4.Range("N27").Value = resst11
+Sheet4.Range("O27").Value = resst12
+Sheet4.Range("P27").Value = resst13
+Sheet4.Range("Q27").Value = resst14
+ End If
+ElseIf (Sheet1.Range("N10").Value = Sheet4.Range("B28").Value) Then
+b = Sheet4.Range("C28").Value
+If (Sheet4.Range("F19").Value <= 5550) Then
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+Sheet4.Range("D28").Value = resst1
+Sheet4.Range("E28").Value = resst2
+Sheet4.Range("F28").Value = resst3
+Sheet4.Range("G28").Value = resst4
+Sheet4.Range("H28").Value = resst5
+Sheet4.Range("I28").Value = resst6
+Sheet4.Range("J28").Value = resst7
+Sheet4.Range("K28").Value = resst8
+Sheet4.Range("L28").Value = resst9
+Sheet4.Range("M28").Value = resst10
+Sheet4.Range("N28").Value = resst11
+Sheet4.Range("O28").Value = resst12
+Sheet4.Range("P28").Value = resst13
+Sheet4.Range("Q28").Value = resst14
+Else
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500: Y = X - 2500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+Sheet4.Range("D28").Value = resst1
+Sheet4.Range("E28").Value = resst2
+Sheet4.Range("F28").Value = resst3
+Sheet4.Range("G28").Value = resst4
+Sheet4.Range("H28").Value = resst5
+Sheet4.Range("I28").Value = resst6
+Sheet4.Range("J28").Value = resst7
+Sheet4.Range("K28").Value = resst8
+Sheet4.Range("L28").Value = resst9
+Sheet4.Range("M28").Value = resst10
+Sheet4.Range("N28").Value = resst11
+Sheet4.Range("O28").Value = resst12
+Sheet4.Range("P28").Value = resst13
+Sheet4.Range("Q28").Value = resst14
+ End If
+ 
+ ElseIf (Sheet1.Range("N10").Value = Sheet4.Range("B29").Value) Then
+b = Sheet4.Range("C29").Value
+If (Sheet4.Range("F19").Value <= 5550) Then
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * X
+Sheet4.Range("D29").Value = resst1
+Sheet4.Range("E29").Value = resst2
+Sheet4.Range("F29").Value = resst3
+Sheet4.Range("G29").Value = resst4
+Sheet4.Range("H29").Value = resst5
+Sheet4.Range("I29").Value = resst6
+Sheet4.Range("J29").Value = resst7
+Sheet4.Range("K29").Value = resst8
+Sheet4.Range("L29").Value = resst9
+Sheet4.Range("M29").Value = resst10
+Sheet4.Range("N29").Value = resst11
+Sheet4.Range("O29").Value = resst12
+Sheet4.Range("P29").Value = resst13
+Sheet4.Range("Q29").Value = resst14
+Else
+g = d - 25: r = g - 25: s = r - 50: t = s - 100: u = t - 200: v = u - 400: w = v - 750: X = w - 1500: Y = X - 2500
+resst1 = a * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst2 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 5, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst3 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 6, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst4 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 7, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst5 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 8, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst6 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 9, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst7 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 10, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst8 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 11, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst9 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 12, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst10 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 13, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst11 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 14, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst12 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 15, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+resst13 = Application.VLookup(Sheet4.Range("F19").Value, Sheet4.Range("C6:S15").Value, 16, True) * b + h * 25 + i * 25 + j * 50 + k * 100 + l * 200 + m * 400 + n * 750 + o * 1500 + p * 2500 + (Y) * c
+Sheet4.Range("D29").Value = resst1
+Sheet4.Range("E29").Value = resst2
+Sheet4.Range("F29").Value = resst3
+Sheet4.Range("G29").Value = resst4
+Sheet4.Range("H29").Value = resst5
+Sheet4.Range("I29").Value = resst6
+Sheet4.Range("J29").Value = resst7
+Sheet4.Range("K29").Value = resst8
+Sheet4.Range("L29").Value = resst9
+Sheet4.Range("M29").Value = resst10
+Sheet4.Range("N29").Value = resst11
+Sheet4.Range("O29").Value = resst12
+Sheet4.Range("P29").Value = resst13
+Sheet4.Range("Q29").Value = resst14
+ End If
+ 
+ 
+ 
+ 
+ 
+ 
+ End If
+     End Sub
+     
