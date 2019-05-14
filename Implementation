@@ -1,0 +1,2028 @@
+
+
+Private Sub chka_Click()
+
+If (chka.Value = True) Then
+lblaa.Caption = Sheet2.Range("C67").Value
+
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C67").Value
+ElseIf (chka.Value = False) Then
+lblaa.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C67").Value
+End If
+End Sub
+
+Private Sub chkadminguide_Click()
+
+If (chkadminguide.Value = True) Then
+lbladminguide.Caption = Sheet2.Range("C66").Value
+lbltotalguide.Caption = CLng(lbltotalguide.Caption) + Sheet2.Range("C66").Value
+ElseIf (chkadminguide.Value = False) Then
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C66").Value
+lbladminguide.Caption = ""
+End If
+End Sub
+
+Private Sub chkb_Click()
+Dim a As Variant
+'a = Sheet2.Range("C67").Value + Sheet2.Range("C68").Value + Sheet2.Range("C69").Value + Sheet2.Range("C70").Value + Sheet2.Range("C71").Value + Sheet2.Range("C72").Value + Sheet2.Range("C73").Value + Sheet2.Range("C74").Value + Sheet2.Range("C75").Value + Sheet2.Range("C76").Value + Sheet2.Range("C77").Value + Sheet2.Range("C78").Value
+If (chkb.Value = True) Then
+lblbb.Caption = Sheet2.Range("C68").Value
+lbltotalguide.Caption = CLng(lbltotalguide.Caption) + Sheet2.Range("C68").Value
+ElseIf (chkb.Value = False) Then
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C68").Value
+ lblbb.Caption = ""
+End If
+End Sub
+
+Private Sub chkc_Click()
+If (chkc.Value = True) Then
+lblcc.Caption = Sheet2.Range("C69").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C69").Value
+ElseIf (chkc.Value = False) Then
+ lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C69").Value
+ lblcc.Caption = ""
+End If
+End Sub
+
+Private Sub chkd_Click()
+If (chkd.Value = True) Then
+lbldd.Caption = Sheet2.Range("C70").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C70").Value
+ElseIf (chkd.Value = False) Then
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C70").Value
+lbldd.Caption = ""
+End If
+End Sub
+
+Private Sub chke_Click()
+If (chke.Value = True) Then
+lblee.Caption = Sheet2.Range("C71").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C72").Value
+ElseIf (chke.Value = False) Then
+lblee.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C72").Value
+End If
+End Sub
+
+Private Sub chkelearning_Click()
+If (chkelearning.Value = True) Then
+lblelearn.Caption = Sheet2.Range("C71").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C71").Value
+ElseIf (chkelearning.Value = False) Then
+lblelearn.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C71").Value
+End If
+End Sub
+
+Private Sub chkf_Click()
+If (chkf.Value = True) Then
+lblff.Caption = Sheet2.Range("C73").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C73").Value
+ElseIf (chkf.Value = False) Then
+lblff.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C73").Value
+End If
+End Sub
+
+
+
+
+
+Private Sub chkfulladmin_Click()
+If (chkfulladmin.Value = True) Then
+
+chkhalfadmin.Value = False
+'Txtwork.Text = 0
+'Txttraining.Text = 0
+
+End If
+   Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+''''grid fro training''''''''''''''''''''''''''''
+
+If (Txttraining.Text = "") Then
+chkfulladmin.Value = False
+  '  MsgBox "Please enter numeric value in times training required"
+    
+   Exit Sub
+    End If
+    
+    If (Txtuser.Text = "") Then
+      
+      
+      
+      
+End If
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+
+
+
+'b = (Sheet2.Range("H19").Value * CLng(Txtuser.Text)) ''fulldayuser trainin
+
+'dd = (Sheet2.Range("H20").Value * CLng(Txtuser.Text)) ''halfday user train
+
+
+
+
+'c = Sheet2.Range("C19").Value
+d = Sheet2.Range("B19").Value
+
+
+
+
+
+If (lbladmin.Caption = "Admin" And chkfulladmin.Value = True And chkhalfadmin.Value = False And Txttraining.Text <> "") Then
+
+
+lbltrainAU.Caption = bb
+'lbltrainAU.Caption = (Sheet2.Range("H19").Value * CLng(Txttraining.Text))
+
+ElseIf (lbladmin.Caption = "Admin" And chkfulladmin.Value = False And chkhalfadmin.Value = True And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = cc
+
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = (Sheet2.Range("H19").Value * CLng(Txtuser.Text)) + cc
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = (Sheet2.Range("H19").Value * CLng(Txtuser.Text)) + bb
+
+'''''''''''
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = (Sheet2.Range("H20").Value * CLng(Txtuser.Text)) + cc
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = (Sheet2.Range("H20").Value * CLng(Txtuser.Text)) + bb
+
+
+
+
+
+End If
+End Sub
+
+Private Sub chkfulluser_Click()
+
+
+
+If (chkfulluser.Value = True) Then
+
+chkhalfuser.Value = False
+End If
+If Not IsNumeric(Left(Txtuser, 1)) Then
+   ' MsgBox "Please enter numeric value in times training required"
+   
+   chkfulluser.Value = False
+    Exit Sub
+    End If
+    
+ Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+'r = (Sheet2.Range("C36").Value * Txtwork.Text) '' fullday workshop
+'rr = (Sheet2.Range("C37").Value * Txtwork.Text) '' halfday workshop
+''''grid fro training''''''''''''''''''''''''''''
+b = (Sheet2.Range("H19").Value * Txtuser.Text) ''fulldayuser trainin
+
+dd = (Sheet2.Range("H20").Value * Txtuser.Text) ''halfday user train
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+'bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+'cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+
+'c = Sheet2.Range("C19").Value
+d = Sheet2.Range("B19").Value
+
+
+
+
+
+If (lbluser.Caption = "User" And chkfulluser.Value = True And chkhalfuser.Value = False And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = (Sheet2.Range("H19").Value * Txtuser.Text)
+
+
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = False And chkhalfuser.Value = True And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = dd
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = b + (Sheet2.Range("G20").Value * Txttraining.Text)
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = b + (Sheet2.Range("G19").Value * Txttraining.Text)
+
+'''''''''''
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = dd + (Sheet2.Range("G20").Value * Txttraining.Text)
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "" And Txtuser.Text <> "") Then
+
+lbltrainAU.Caption = dd + (Sheet2.Range("G19").Value * Txttraining.Text)
+
+End If
+End Sub
+
+Private Sub chkg_Click()
+If (chkg.Value = True) Then
+lblgg.Caption = Sheet2.Range("C74").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C74").Value
+ElseIf (chkg.Value = False) Then
+lblgg.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C74").Value
+End If
+End Sub
+Private Sub chkh_Click()
+If (chkh.Value = True) Then
+lblhh.Caption = Sheet2.Range("C75").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C75").Value
+ElseIf (chkh.Value = False) Then
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C75").Value
+lblhh.Caption = ""
+End If
+End Sub
+
+Private Sub chkhalfday_Click()
+If (chkhalfday.Value = True) Then
+optadminh.Enabled = True
+optadminh.Value = True
+optuserh.Enabled = True
+Else
+optadminh.Enabled = False
+optuserh.Enabled = False
+End If
+End Sub
+
+Private Sub chkhalfadmin_Click()
+If (chkhalfadmin.Value = True) Then
+
+chkfulladmin.Value = False
+
+End If
+
+If Not IsNumeric(Left(Txttraining, 1)) Then
+ '   MsgBox "Please enter numeric value in times training required"
+   chkhalfadmin.Value = False
+    Exit Sub
+    End If
+
+ Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+'r = (Sheet2.Range("C36").Value * Txtwork.Text) '' fullday workshop
+'rr = (Sheet2.Range("C37").Value * Txtwork.Text) '' halfday workshop
+''''grid fro training''''''''''''''''''''''''''''
+b = (Sheet2.Range("H19").Value * Txttraining.Text) ''fulldayuser trainin
+
+dd = (Sheet2.Range("H20").Value * Txttraining.Text) ''halfday user train
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+
+'c = Sheet2.Range("C19").Value
+d = Sheet2.Range("B19").Value
+
+
+
+
+
+If (lbladmin.Caption = "Admin" And chkfulladmin.Value = True And chkhalfadmin.Value = False And Txttraining.Text <> "" Or Txtuser.Text <> "") Then
+lbltrainAU.Caption = bb
+ElseIf (lbladmin.Caption = "Admin" And chkfulladmin.Value = False And chkhalfadmin.Value = True And Txttraining.Text <> "" Or Txtuser.Text <> "") Then
+lbltrainAU.Caption = cc
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "" Or Txtuser.Text <> "") Then
+lbltrainAU.Caption = b + cc
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "" Or Txtuser.Text <> "") Then
+lbltrainAU.Caption = b + bb
+'''''''''''
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "" Or Txtuser.Text <> "") Then
+lbltrainAU.Caption = dd + cc
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "" Or Txtuser.Text <> "") Then
+lbltrainAU.Caption = dd + bb
+
+
+
+
+End If
+End Sub
+
+Private Sub chkhalfuser_Click()
+If (chkhalfuser.Value = True) Then
+chkfulluser.Value = False
+End If
+
+If Not IsNumeric(Left(Txtuser, 1)) Then
+  '  MsgBox "Please enter numeric value in times training required"
+    
+   chkhalfuser.Value = False
+    Exit Sub
+    End If
+    Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+'r = (Sheet2.Range("C36").Value * Txtwork.Text) '' fullday workshop
+'rr = (Sheet2.Range("C37").Value * Txtwork.Text) '' halfday workshop
+''''grid fro training''''''''''''''''''''''''''''
+b = (Sheet2.Range("H19").Value * Txtuser.Text) ''fulldayuser trainin
+
+dd = (Sheet2.Range("H20").Value * Txtuser.Text) ''halfday user train
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+'bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+'cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+
+'c = Sheet2.Range("C19").Value
+d = Sheet2.Range("B19").Value
+
+
+
+
+If (lbluser.Caption = "User" And chkfulluser.Value = True And chkhalfuser.Value = False And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = b
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = False And chkhalfuser.Value = True And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = dd
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = b + (Sheet2.Range("G20").Value * Txttraining.Text)
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = b + (Sheet2.Range("G19").Value * Txttraining.Text)
+
+'''''''''''
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = dd + (Sheet2.Range("G20").Value * Txttraining.Text)
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True And Txttraining.Text <> "") Then
+
+lbltrainAU.Caption = dd + (Sheet2.Range("G19").Value * Txttraining.Text)
+
+End If
+End Sub
+
+Private Sub chki_Click()
+If (chki.Value = True) Then
+lblii.Caption = Sheet2.Range("C76").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C76").Value
+ElseIf (chki.Value = False) Then
+lblii.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C76").Value
+End If
+End Sub
+
+Private Sub chkimple_Click()
+'lblrisk.Caption = Sheet2.Range("C80").Value
+
+If (chkimple.Value = True) Then
+lblrisk.Caption = Sheet2.Range("C78").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C78").Value
+ElseIf (chkimple.Value = False) Then
+lblrisk.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C78").Value
+End If
+
+End Sub
+
+Private Sub chkk_Click()
+If (chkk.Value = True) Then
+lblkk.Caption = Sheet2.Range("C76").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C76").Value
+ElseIf (chkk.Value = False) Then
+lblkk.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C76").Value
+End If
+End Sub
+
+Private Sub chkj_Click()
+If (chkj.Value = True) Then
+lbljj.Caption = Sheet2.Range("C76").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C77").Value
+ElseIf (chkj.Value = False) Then
+lbljj.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C77").Value
+End If
+End Sub
+
+
+
+Private Sub chkl_Click()
+If (chkl.Value = True) Then
+
+lblll.Caption = Sheet2.Range("C77").Value
+lbltotalguide.Caption = lbltotalguide.Caption + Sheet2.Range("C77").Value
+
+ElseIf (chkl.Value = False) Then
+
+lblll.Caption = ""
+lbltotalguide.Caption = lbltotalguide.Caption - Sheet2.Range("C77").Value
+
+End If
+End Sub
+
+
+
+
+Private Sub chkopen_Click()
+If (chkopen.Value = True) Then
+Me.Height = 529.2
+Me.Width = 882
+Framedoc.Visible = True
+chkadminguide.Visible = True
+chkimple.Visible = True
+Frame14.Visible = False
+
+lbladminguide.Visible = True
+lblrisk.Visible = True
+chkadminguide.Value = True
+chkimple.Value = True
+
+chka.Visible = True: chkb.Visible = True: chkc.Visible = True: chkd.Visible = True: chke.Visible = True: chkf.Visible = True: chkg.Visible = True: chkh.Visible = True: chki.Visible = True: chkl.Visible = True: chkelearning.Visible = True
+lblaa.Visible = True: lblbb.Visible = True: lblcc.Visible = True: lbldd.Visible = True: lblee.Visible = True: lblff.Visible = True: lblgg.Visible = True: lblhh.Visible = True: lblii.Visible = True: lblll.Visible = True: lblelearn.Visible = True
+'chka.Value = True: chkb.Value = True: chkc.Value = True: chkd.Value = True: chke.Value = True: chkf.Value = True: chkg.Value = True: chkh.Value = True: chki.Value = True: chkj.Value = True: chkk.Value = True: chkl.Value = True
+
+
+If (Sheet1.Range("C8").Value = False And Sheet6.Rows("14:14").EntireRow.Hidden = True) Then
+lblaa.Caption = ""
+chka.Value = False
+'lbltotalguide.Caption = Sheet2.Range("C68").Value + Sheet2.Range("C69").Value + Sheet2.Range("C70").Value + Sheet2.Range("C71").Value + Sheet2.Range("C72").Value + Sheet2.Range("C73").Value + Sheet2.Range("C74").Value + Sheet2.Range("C75").Value + Sheet2.Range("C76").Value + Sheet2.Range("C77").Value + Sheet2.Range("C78").Value
+
+Else
+lblaa.Caption = Sheet2.Range("C67").Value
+chka.Value = True
+End If
+If (Sheet1.Range("C9").Value = False And Sheet6.Rows("15:15").EntireRow.Hidden = True) Then
+chkb.Value = False
+lblbb.Caption = ""
+Else
+chkb.Value = True
+lblbb.Caption = Sheet2.Range("C68").Value
+End If
+If (Sheet1.Range("C10").Value = False And Sheet6.Rows("16:16").EntireRow.Hidden = True) Then
+lblcc.Caption = ""
+chkc.Value = False
+Else
+chkc.Value = True
+lblcc.Caption = Sheet2.Range("C69").Value
+End If
+If (Sheet1.Range("C11").Value = False And Sheet6.Rows("17:17").EntireRow.Hidden = True) Then
+chkg.Value = False
+lblgg.Caption = ""
+
+Else
+chkg.Value = True
+lblgg.Caption = Sheet2.Range("C74").Value
+End If
+
+
+If (Sheet1.Range("C12").Value = False And Sheet6.Rows("18:18").EntireRow.Hidden = True) Then
+chkd.Value = False
+lbldd.Caption = ""
+Else
+chkd.Value = True
+ lbldd.Caption = Sheet2.Range("C70").Value
+End If
+
+
+
+If (Sheet1.Range("C13").Value = False And Sheet6.Rows("19:19").EntireRow.Hidden = True) Then
+
+
+chkelearning.Value = False
+lblelearn.Caption = ""
+Else
+chkelearning.Value = True
+ lblelearn.Caption = Sheet2.Range("C71").Value
+
+End If
+
+If (Sheet1.Range("C14").Value = False And Sheet6.Rows("20:20").EntireRow.Hidden = True) Then
+chki.Value = False
+lblii.Caption = ""
+Else
+chki.Value = True
+ lblii.Caption = Sheet2.Range("C76").Value
+End If
+
+If (Sheet1.Range("C15").Value = False And Sheet6.Rows("21:21").EntireRow.Hidden = True) Then
+chke.Value = False
+lblee.Caption = ""
+
+Else
+chke.Value = True
+ lblee.Caption = Sheet2.Range("C72").Value
+ 
+End If
+
+
+
+
+If (Sheet1.Range("C16").Value = False And Sheet6.Rows("22:22").EntireRow.Hidden = True) Then
+chkf.Value = False
+lblff.Caption = ""
+Else
+chkf.Value = True
+ lblff.Caption = Sheet2.Range("C73").Value
+End If
+
+
+
+
+
+
+If (Sheet1.Range("C17").Value = False And Sheet6.Rows("23:23").EntireRow.Hidden = True) Then
+chkh.Value = False
+lblhh.Caption = ""
+Else
+chkh.Value = True
+ lblhh.Caption = Sheet2.Range("C75").Value
+End If
+
+
+
+
+If (Sheet1.Range("C18").Value = False And Sheet6.Rows("24:24").EntireRow.Hidden = True) Then
+chkl.Value = False
+lblll.Caption = ""
+Else
+chkl.Value = True
+ lblll.Caption = Sheet2.Range("C77").Value
+End If
+Else
+'chkadminguide.Visible = False
+'chkimple.Visible = False
+chkadminguide.Value = False
+chkimple.Value = False
+lbladminguide.Visible = False
+lblrisk.Visible = False
+lblaa.Visible = False: lblbb.Visible = False: lblcc.Visible = False: lbldd.Visible = False: lblee.Visible = False: lblff.Visible = False: lblgg.Visible = False: lblhh.Visible = False: lblii.Visible = False: lblll.Visible = False: chkelearning.Visible = False
+chka.Visible = False: chkb.Visible = False: chkc.Visible = False: chkd.Visible = False: chke.Visible = False: chkf.Visible = False: chkg.Visible = False: chkh.Visible = False: chki.Visible = False: chkl.Value = False: lblelearn.Visible = False
+chka.Value = False: chkb.Value = False: chkc.Value = False: chkd.Value = False: chke.Value = False: chkf.Value = False: chkg.Value = False: chkh.Value = False: chki.Value = False:  chkl.Value = False: chkelearning.Value = False
+lbltotalguide.Caption = 0
+Framedoc.Visible = False
+Frame14.Visible = False
+Me.Height = 529.2
+Me.Width = 600
+End If
+
+End Sub
+
+
+Private Sub chkselect_Click()
+
+If (chkselect.Value = True) Then
+'optfullday.Value = True
+If Not IsNumeric(Left(Txtwork, 1)) Then
+    MsgBox "Please enter numeric value in times workshop required"
+     
+    End If
+optfullday.Enabled = True
+opthalfday.Enabled = True
+Else
+optfullday.Enabled = False
+opthalfday.Enabled = False
+'optfullday.Value = False
+End If
+
+End Sub
+
+Private Sub chktick_Click()
+If (chktick.Value = True And txtmultiplier.Text <> "") Then
+Txtbaseconfig.Text = Sheet6.Range("E28").Value * txtmultiplier.Text
+Else
+Txtbaseconfig.Text = Sheet6.Range("E28").Value * 1.5
+txtmultiplier.Text = ""
+End If
+End Sub
+
+Private Sub cmdesult_Click()
+
+
+'If Not IsNumeric(Left(txtmultiplier, 1)) Then
+  '  MsgBox "Please enter numeric value in implementation multiplier"
+   '  Exit Sub
+   ' End If
+    
+    
+
+Dim i As Long
+
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ i = Sheet2.Range("C12").Value + Sheet2.Range("C85").Value ''<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+go = CLng(lbltotalguide.Caption) + CLng(Txtfinal.Text)
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+cute = CLng(txtmiconfig.Text) 'not yet included migration and base config data
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+Dim BaseSaas, trainadmin As Long
+BaseSaas = Txtbaseconfig.Text
+'lbltrainAU.Visible = False
+'trainadmin = lbltrainAU.Caption
+'If (chkfulluser.Value = True Or chkhalfadmin.Value = True Or chkhalfuser.Value = True Or chkfulladmin.Value = True And Txttraining.Text = 0) Then
+'MsgBox "Please enter number of times training required"
+
+'If (Txtwork.Text = "") Then GoTo label
+ '
+      '  If (Txttraining.Text = "") Then GoTo label
+'If (Txtwork.Text = "") Then
+    
+
+'If (Txttraining.Text = "") Then GoTo Label1
+'If (Txtuser.Text = "") Then GoTo Label1
+'Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+'r = (Sheet2.Range("C36").Value * Txtwork.Text) '' fullday workshop
+'rr = (Sheet2.Range("C37").Value * Txtwork.Text) '' halfday workshop
+''''grid fro training''''''''''''''''''''''''''''
+'b = (Sheet2.Range("H19").Value * Txtuser.Text) ''fulldayuser trainin
+
+ 'dd = (Sheet2.Range("H20").Value * Txtuser.Text) ''halfday user train
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+'bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+'cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+
+'c = Sheet2.Range("C19").Value
+d = Sheet2.Range("B19").Value
+
+
+If (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True) Then
+
+lbltrainAU.Caption = (Sheet2.Range("H19").Value * Txtuser.Text) + (Sheet2.Range("G20").Value * Txttraining.Text)
+ElseIf (lbluser.Caption = "User" And chkfulluser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True) Then
+
+lbltrainAU.Caption = (Sheet2.Range("H19").Value * Txtuser.Text) + (Sheet2.Range("G19").Value * Txttraining.Text)
+'''''''''''
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkhalfadmin.Value = True) Then
+
+lbltrainAU.Caption = (Sheet2.Range("H20").Value * Txtuser.Text) + (Sheet2.Range("G20").Value * Txttraining.Text)
+ElseIf (lbluser.Caption = "User" And chkhalfuser.Value = True And lbladmin.Caption = "Admin" And chkfulladmin.Value = True) Then
+
+lbltrainAU.Caption = (Sheet2.Range("H20").Value * Txtuser.Text) + (Sheet2.Range("G19").Value * Txttraining.Text)
+
+End If
+
+
+'End If
+Label1:
+
+ Txtimpliment.Text = BaseSaas + go + lbltrainAU.Caption + lblworkshp.Caption
+
+'>>>>>>>>>>>>>>>>>project management>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+project = CLng(Txtimpliment.Text) * (10 * 1 / 100) '>
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+If (txtprojmgt.Text = "") Then
+ 
+ TxtProject.Text = 0
+ Else
+ TxtProject.Text = 8 * 165 * txtprojmgt.Text
+
+ End If
+ Txtimpliment.Text = CLng(Txtimpliment.Text) + project
+ 
+ 
+ TxtfixedPrice.Text = CLng(Txtimpliment.Text) + CLng(TxtProject.Text)
+
+
+
+    
+    
+End Sub
+Sub Actualresult()
+
+
+End Sub
+Private Sub cmdExit_Click()
+Unload Me
+End Sub
+
+Private Sub cmdrecord_Click()
+
+
+creation
+MsgBox ("Record Submitted")
+
+'UserForm3.Show
+'popper
+'data
+'dataworking
+
+
+End Sub
+
+Private Sub data()
+
+Dim rng As Range
+Set rng = ActiveSheet.ListObjects("Table5").Range
+'Set rng = ActiveSheet.ListObjects.Add(xlSrcRange, Range("$B$2:$G$11"), , xlNo).Name = _
+        "Table3"
+'Set rng = Application.Sheets("Recorded_ValuesRM").Range("A2:A11")
+
+Dim lstrow As Long
+lstrow = rng.Find(What:="*", after:=rng.Cells(1), lookat:=xlPart, LookIn:=xlFormulas, searchorder:=xlByRows, searchdirection:=xlPrevious, MatchCase:=False).Row
+'For Each rng In ActiveSheet
+rng.Parent.Cells(1, lstrow + 1).Value = Me.Txtbaseconfig.Text
+rng.Parent.Cells(2, lstrow + 1).Value = Me.lbltrainAU.Caption
+'Next
+
+End Sub
+Private Sub dataworking()
+'Dim rng As Range
+'Dim wrk As Worksheets
+'Set wrk = ActiveSheet.Sheets("Recorded_ValuesRM")
+'Set rng = Application.Sheets("Recorded_ValuesRM").Range("A2:A11")
+
+'Dim lstrow As Long
+'lstrow = wrk.Cells(Rows.Count, 1).End(xlUp).Row + 1
+
+
+'lstrow = lstrow + 1
+'Application.WorksheetFunction.Count (Range("B2:B11") & lstrow)
+'wrk.Cells(lstrow, 1) = Me.Txtbaseconfig.Text
+'wrk.Cells(lstrow, 2) = Me.Txtbaseconfig.Text
+
+
+Dim emptyRow As Long
+
+'Make Sheet1 active
+sheet7.Activate
+
+'Determine emptyRow
+emptyRow = WorksheetFunction.Count(Range("C:C")) + 1
+
+'Transfer information
+Cells(emptyRow, 1).Value = Me.Txtbaseconfig.Text
+Cells(emptyRow, 2).Value = Me.lbltrainAU.Caption
+
+'Cells(emptyRow, 3).Value = CityListBox.Value
+'Cells(emptyRow, 4).Value = DinnerComboBox.Value
+
+
+
+End Sub
+
+
+Private Sub numbers()
+
+
+Dim p As Long
+For p = 2 To num
+Cells(2, p) = Me.Txtbaseconfig.Text
+
+Next p
+
+
+
+End Sub
+
+Private Sub target()
+Dim recording As Range
+
+For j = 3 To n
+
+If (recording.column = j And recording.Row = 2) Then
+If (recording.Value = "") Then
+sheet7.Range(2, j).Value = ""
+
+Else
+sheet7.Range(2, j).Value = Format(Now, "mm/dd/yyyy HH:mm:ss")
+'
+ 'ActiveCell.FormulaR1C1 = "=TODAY()"
+    'Range("D3").Select
+End If
+
+End If
+
+
+Next
+
+Dim sh As Object
+If (sh.Name = "Recorded_ValuesRM") Then
+
+
+
+
+
+
+ End If
+
+
+
+
+
+
+End Sub
+
+
+
+
+
+Private Sub creation()
+Dim WorkRng As Range
+Dim target As Range
+Dim rng As Range
+Dim xOffsetRow As Long
+Dim ws As Worksheet
+
+xOffsetRow = 1
+'Dim rng As Range,
+
+Set WorkRng = Application.Sheets("SummaryPage").Range("I1:I13")
+
+If Not WorkRng Is Nothing Then
+    Application.EnableEvents = False
+    For Each rng In WorkRng
+    
+   ' For i = 1 To rng.Rows.Count
+'With WorkRng
+        'If Not VBA.IsEmpty(Rng.Value) Then
+        rng.Offset(0, xOffsetRow).Value = "Date and Time"
+        rng.Offset(1, xOffsetRow).Value = Now
+        rng.Offset(1, xOffsetRow).NumberFormat = "dd-mm-yyyy, hh:mm, AM/PM"
+        rng.Offset(2, xOffsetRow).Value = Txtbaseconfig.Text
+        rng.Offset(3, xOffsetRow).Value = lbltrainAU.Caption
+        rng.Offset(4, xOffsetRow).Value = Me.lblworkshp.Caption
+        rng.Offset(5, xOffsetRow).Value = Me.lbltotalguide.Caption
+        rng.Offset(6, xOffsetRow).Value = Me.Txtfinal.Text
+        rng.Offset(7, xOffsetRow).Value = Me.Txtimpliment.Text
+        rng.Offset(8, xOffsetRow).Value = Me.TxtProject.Text
+        rng.Offset(9, xOffsetRow).Value = Me.TxtfixedPrice.Text
+          
+         
+         
+            'rng.Value = lblworkshp.Caption
+           ' rng.Value = lbltotalguide.Caption
+           '' rng.Value = Txtfinal.Text
+            'rng.Value = Txtimpliment.Text
+           ' End With
+            'rng.Value = TxtProject.Text
+           ' rng.Value = TxtfixedPrice.Text
+            '
+           ' rng.Offset(0, xOffsetRow).NumberFormat = "dd-mm-yyyy, hh:mm:ss"
+       ' Else
+       '    Rng.Offset(0, xOffsetRow).ClearContents
+       ' End If
+       Exit For
+    Next
+    
+    
+    Application.EnableEvents = True
+End If
+
+End Sub
+
+Private Sub popper()
+'Dim WorkRng As Range
+'Dim target As Range
+'Dim rng As Range
+'Dim i As Integer
+'creation
+Dim lRow As Long
+    Dim ws As Worksheet
+   ' Set ws = Worksheets("Recorded_ValuesRM")
+    Set ws = Application.Sheets("Recorded_ValuesRM").Range("A2:A11")
+
+   ' For i = 2 To n
+' lRow = ws.Cells(Rows.Count, 5).End(xlUp).Offset(1, 0).Row
+ lRow = ws.Cells(Rows.Count, 1).End(xlUp).Offset(1, 0).Row
+ 
+ 
+ 
+    With ws
+        .Cells(1, lRow).Value = Me.Txtbaseconfig.Text
+        .Cells(2, lRow).Value = Me.lbltrainAU.Caption
+       .Cells(3, lRow).Value = Me.lblworkshp.Caption
+        .Cells(4, lRow).Value = Me.lbltotalguide.Caption
+       .Cells(5, lRow).Value = Me.Txtfinal.Text
+      .Cells(6, lRow).Value = Me.Txtimpliment.Text
+      .Cells(7, lRow).Value = Me.TxtProject.Text
+      .Cells(8, lRow).Value = Me.TxtfixedPrice.Text
+    End With
+  '  Next i
+End Sub
+
+
+
+
+
+
+
+
+
+Private Sub cmdreset_Click()
+'txtbaseconfiguration.Text = ""
+'txtmultiplier.Text = ""
+Txttraining.Text = ""
+Txtwork.Text = ""
+'chkfulladmin.Value = False
+'chkhalfday.Value = False
+chkselect.Value = False
+txtprojmgt.Text = ""
+lbladminguide.Caption = ""
+lblrisk.Caption = ""
+lbltotalguide.Caption = 0
+lblaa.Caption = ""
+lblbb.Caption = ""
+lblcc.Caption = ""
+lbldd.Caption = ""
+lblee.Caption = ""
+lblff.Caption = ""
+lblgg.Caption = ""
+lblhh.Caption = ""
+lblii.Caption = ""
+lblelearn.Caption = ""
+'Txtbaseconfig.Text = ""
+lblll.Caption = ""
+lblrisk.Caption = ""
+lbladminguide.Caption = ""
+txtmultiplier.Text = ""
+Txtimpliment.Text = ""
+TxtProject.Text = ""
+TxtfixedPrice.Text = ""
+With TreeView1
+If (.Nodes.Item(1).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(1).Checked = False: .Nodes.Item(2).Checked = False: .Nodes.Item(3).Checked = False: .Nodes.Item(4).Checked = False: .Nodes.Item(5).Checked = False: .Nodes.Item(6).Checked = False: .Nodes.Item(7).Checked = False: .Nodes.Item(8).Checked = False: .Nodes.Item(9).Checked = False: .Nodes.Item(10).Checked = False: .Nodes.Item(11).Checked = False: .Nodes.Item(12).Checked = False: .Nodes.Item(13).Checked = False: .Nodes.Item(14).Checked = False: .Nodes.Item(15).Checked = False: .Nodes.Item(16).Checked = False: .Nodes.Item(17).Checked = False
+.Nodes.Item(1).BackColor = &H8000000E: .Nodes.Item(2).BackColor = &H8000000E: .Nodes.Item(3).BackColor = &H8000000E: .Nodes.Item(4).BackColor = &H8000000E: .Nodes.Item(5).BackColor = &H8000000E: .Nodes.Item(6).BackColor = &H8000000E: .Nodes.Item(7).BackColor = &H8000000E: .Nodes.Item(8).BackColor = &H8000000E: .Nodes.Item(9).BackColor = &H8000000E: .Nodes.Item(10).BackColor = &H8000000E: .Nodes.Item(11).BackColor = &H8000000E: .Nodes.Item(12).BackColor = &H8000000E: .Nodes.Item(13).BackColor = &H8000000E: .Nodes.Item(14).BackColor = &H8000000E: .Nodes.Item(15).BackColor = &H8000000E: .Nodes.Item(16).BackColor = &H8000000E: .Nodes.Item(17).BackColor = &H8000000E
+.Nodes.Item(1).EnsureVisible: .Nodes.Item(2).EnsureVisible: .Nodes.Item(3).EnsureVisible: .Nodes.Item(4).EnsureVisible: .Nodes.Item(5).EnsureVisible: .Nodes.Item(7).EnsureVisible: .Nodes.Item(8).EnsureVisible: .Nodes.Item(9).EnsureVisible: .Nodes.Item(10).EnsureVisible
+.Nodes.Item(11).EnsureVisible: .Nodes.Item(12).EnsureVisible: .Nodes.Item(13).EnsureVisible: .Nodes.Item(14).EnsureVisible: .Nodes.Item(15).EnsureVisible: .Nodes.Item(16).EnsureVisible: .Nodes.Item(17).EnsureVisible
+End With
+ElseIf (.Nodes.Item(2).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(2).Checked = False
+.Nodes.Item(2).BackColor = &H8000000E
+.Nodes.Item(2).EnsureVisible
+End With
+ElseIf (.Nodes.Item(3).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(3).Checked = False
+.Nodes.Item(3).BackColor = &H8000000E
+.Nodes.Item(3).EnsureVisible
+End With
+ElseIf (.Nodes.Item(4).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(4).Checked = False
+.Nodes.Item(4).BackColor = &H8000000E
+.Nodes.Item(4).EnsureVisible
+End With
+ElseIf (.Nodes.Item(5).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(5).Checked = False
+.Nodes.Item(5).BackColor = &H8000000E
+.Nodes.Item(5).EnsureVisible
+End With
+ElseIf (.Nodes.Item(6).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(6).Checked = False
+.Nodes.Item(6).BackColor = &H8000000E
+.Nodes.Item(6).EnsureVisible
+End With
+ElseIf (.Nodes.Item(7).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(7).Checked = False
+.Nodes.Item(7).BackColor = &H8000000E
+.Nodes.Item(7).EnsureVisible
+End With
+ElseIf (.Nodes.Item(8).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(8).Checked = False
+.Nodes.Item(8).BackColor = &H8000000E
+.Nodes.Item(8).EnsureVisible
+End With
+ElseIf (.Nodes.Item(9).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(9).Checked = False
+.Nodes.Item(9).BackColor = &H8000000E
+.Nodes.Item(9).EnsureVisible
+End With
+ElseIf (.Nodes.Item(10).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(10).Checked = False
+.Nodes.Item(10).BackColor = &H8000000E
+.Nodes.Item(10).EnsureVisible
+End With
+ElseIf (.Nodes.Item(11).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(11).Checked = False
+.Nodes.Item(11).BackColor = &H8000000E
+.Nodes.Item(11).EnsureVisible
+End With
+ElseIf (.Nodes.Item(12).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(12).Checked = False
+.Nodes.Item(12).BackColor = &H8000000E
+.Nodes.Item(12).EnsureVisible
+End With
+ElseIf (.Nodes.Item(13).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(13).Checked = False
+.Nodes.Item(13).BackColor = &H8000000E
+.Nodes.Item(13).EnsureVisible
+End With
+ElseIf (.Nodes.Item(14).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(14).Checked = False
+.Nodes.Item(14).BackColor = &H8000000E
+.Nodes.Item(14).EnsureVisible
+End With
+ElseIf (.Nodes.Item(15).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(15).Checked = False
+.Nodes.Item(15).BackColor = &H8000000E
+.Nodes.Item(15).EnsureVisible
+End With
+ElseIf (.Nodes.Item(16).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(16).Checked = False
+.Nodes.Item(16).BackColor = &H8000000E
+.Nodes.Item(16).EnsureVisible
+End With
+ElseIf (.Nodes.Item(17).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(17).Checked = False
+.Nodes.Item(17).BackColor = &H8000000E
+.Nodes.Item(17).EnsureVisible
+End With
+ElseIf (.Nodes.Item(18).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(18).Checked = False
+.Nodes.Item(19).Checked = False
+.Nodes.Item(20).Checked = False
+.Nodes.Item(18).BackColor = &H8000000E
+.Nodes.Item(19).BackColor = &H8000000E
+.Nodes.Item(20).BackColor = &H8000000E
+.Nodes.Item(18).EnsureVisible
+.Nodes.Item(19).EnsureVisible
+.Nodes.Item(20).EnsureVisible
+End With
+ElseIf (.Nodes.Item(19).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(19).Checked = False
+.Nodes.Item(19).BackColor = &H8000000E
+.Nodes.Item(19).EnsureVisible
+End With
+ElseIf (.Nodes.Item(20).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(20).Checked = False
+.Nodes.Item(20).BackColor = &H8000000E
+.Nodes.Item(20).EnsureVisible
+End With
+ElseIf (.Nodes.Item(21).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+idx = .Nodes.Count
+'MsgBox idx
+'.Nodes.Item(28).Checked = True
+.Nodes.Item(21).Checked = False
+'= &HC0E0FF 'Node that was first selected
+'.Nodes.Item(28).BackColor = &HC0FFC0
+.Nodes.Item(22).Checked = False
+.Nodes.Item(23).Checked = False
+.Nodes.Item(24).Checked = False
+.Nodes.Item(21).BackColor = &H8000000E
+.Nodes.Item(22).BackColor = &H8000000E
+.Nodes.Item(23).BackColor = &H8000000E
+.Nodes.Item(24).BackColor = &H8000000E
+.Nodes.Item(21).EnsureVisible
+.Nodes.Item(22).EnsureVisible
+.Nodes.Item(23).EnsureVisible
+.Nodes.Item(24).EnsureVisible
+End With
+ElseIf (.Nodes.Item(22).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(22).Checked = False
+.Nodes.Item(22).BackColor = &H8000000E
+.Nodes.Item(22).EnsureVisible
+End With
+ElseIf (.Nodes.Item(23).Checked = True) Then
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(23).Checked = False
+.Nodes.Item(23).BackColor = &H8000000E
+.Nodes.Item(23).EnsureVisible
+End With
+ElseIf (.Nodes.Item(24).Checked = True) Then
+Txtfinal.Text = 0
+With Me.TreeView1
+.Nodes.Item(24).Checked = False
+.Nodes.Item(24).BackColor = &H8000000E
+.Nodes.Item(24).EnsureVisible
+End With
+End If
+End With
+chkadminguide.Value = False
+lbltotalguide.Caption = 0
+chka.Value = False
+lbltotalguide.Caption = 0
+lbltotalguide.Caption = 0
+chkb.Value = False
+lbltotalguide.Caption = 0
+chkc.Value = False
+lbltotalguide.Caption = 0
+chkd.Value = False
+lbltotalguide.Caption = 0
+chkelearning.Value = False
+lbltotalguide.Caption = 0
+chke.Value = False
+lbltotalguide.Caption = 0
+chkf.Value = False
+lbltotalguide.Caption = 0
+chkg.Value = False
+lbltotalguide.Caption = 0
+chkh.Value = False
+lbltotalguide.Caption = 0
+chki.Value = False
+lbltotalguide.Caption = 0
+chkl.Value = False
+lbltotalguide.Caption = 0
+chkimple.Value = False
+lbltotalguide.Caption = 0
+chkopen.Value = False
+lbltotalguide.Caption = 0
+End Sub
+
+Private Sub cmdretain_Click()
+UserForm_Initialize
+End Sub
+
+Private Sub optadminh_Click()
+If (chkhalfday.Value = True) Then
+If (optuserh.Value = False) Then
+optadminh.Value = True
+End If
+Else
+optadminh.Value = False
+End If
+End Sub
+
+
+
+Private Sub Frame10_Click()
+
+End Sub
+
+Private Sub optfullday_Click()
+If (optfullday.Value = True) Then
+opthalfday.Value = False
+End If
+ Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+r = (Sheet2.Range("C36").Value * Txtwork.Text) '' fullday workshop
+rr = (Sheet2.Range("C37").Value * Txtwork.Text) '' halfday workshop
+''''grid fro training''''''''''''''''''''''''''''
+'b = (Sheet2.Range("H19").Value * CLng(Txttraining.Text)) ''fulldayuser trainin
+
+'dd = (Sheet2.Range("H20").Value * CLng(Txttraining.Text)) ''halfday user train
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+'bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+'cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+
+
+
+If (optfullday.Value = True) Then
+lblworkshp.Caption = r
+Else
+lblworkshp.Caption = ""
+End If
+End Sub
+
+Private Sub opthalfday_Click()
+If (opthalfday.Value = True) Then
+optfullday.Value = False
+End If
+Dim a, b, c, d As Variant
+'a = (Sheet2.Range("C2").Value * txtprojmgt.Text * 1 / 100)
+r = (Sheet2.Range("C36").Value * Txtwork.Text) '' fullday workshop
+rr = (Sheet2.Range("C37").Value * Txtwork.Text) '' halfday workshop
+''''grid fro training''''''''''''''''''''''''''''
+'b = (Sheet2.Range("H19").Value * Txttraining.Text) ''fulldayuser trainin
+
+'dd = (Sheet2.Range("H20").Value * Txttraining.Text) ''halfday user train
+
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+
+'bb = (Sheet2.Range("G19").Value * Txttraining.Text) ''fullday admin training
+''''''''''''''''''''''''''>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+'cc = (Sheet2.Range("G20").Value * Txttraining.Text) ''halfday admintraining
+If (opthalfday.Value = True) Then
+lblworkshp.Caption = rr
+End If
+End Sub
+
+Private Sub TreeView1_NodeCheck(ByVal Node As MSComctlLib.Node)
+DoNodeChangedState TreeView1, Node
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+With TreeView1
+If (.Nodes.Item(1).Checked = True And Node = "Data Uploads") Then
+'txtresult.Text = Sheet2.Range("C39").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C39").Value
+
+'Txtimpliment.Text = Sheet2.Range("C39").Value
+With Me.TreeView1
+.Nodes.Item(1).Checked = True: .Nodes.Item(2).Checked = True: .Nodes.Item(3).Checked = True: .Nodes.Item(4).Checked = True: .Nodes.Item(5).Checked = True: .Nodes.Item(6).Checked = True: .Nodes.Item(7).Checked = True: .Nodes.Item(8).Checked = True: .Nodes.Item(9).Checked = True: .Nodes.Item(10).Checked = True: .Nodes.Item(11).Checked = True: .Nodes.Item(12).Checked = True: .Nodes.Item(13).Checked = True
+.Nodes.Item(14).Checked = True: .Nodes.Item(15).Checked = True: .Nodes.Item(16).Checked = True: .Nodes.Item(17).Checked = True
+.Nodes.Item(1).BackColor = &HC0FFC0: .Nodes.Item(2).BackColor = &HC0FFC0: .Nodes.Item(3).BackColor = &HC0FFC0: .Nodes.Item(4).BackColor = &HC0FFC0: .Nodes.Item(5).BackColor = &HC0FFC0: .Nodes.Item(6).BackColor = &HC0FFC0: .Nodes.Item(7).BackColor = &HC0FFC0: .Nodes.Item(8).BackColor = &HC0FFC0: .Nodes.Item(9).BackColor = &HC0FFC0: .Nodes.Item(10).BackColor = &HC0FFC0: .Nodes.Item(11).BackColor = &HC0FFC0: .Nodes.Item(12).BackColor = &HC0FFC0: .Nodes.Item(13).BackColor = &HC0FFC0: .Nodes.Item(14).BackColor = &HC0FFC0: .Nodes.Item(15).BackColor = &HC0FFC0: .Nodes.Item(16).BackColor = &HC0FFC0: .Nodes.Item(17).BackColor = &HC0FFC0
+.Nodes.Item(1).EnsureVisible: .Nodes.Item(2).EnsureVisible: .Nodes.Item(3).EnsureVisible: .Nodes.Item(4).EnsureVisible: .Nodes.Item(8).EnsureVisible: .Nodes.Item(9).EnsureVisible: .Nodes.Item(10).EnsureVisible: .Nodes.Item(11).EnsureVisible
+End With
+ElseIf (.Nodes.Item(1).Checked = False And Node = "Data Uploads") Then
+'txtresult.Text = Sheet2.Range("C39").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C39").Value
+
+'Txtimpliment.Text = Txtimpliment.Text - Sheet2.Range("C39").Value
+'If (txtresult.Text = Sheet2.Range("C39").Value) Then
+With Me.TreeView1
+.Nodes.Item(1).Checked = False: .Nodes.Item(2).Checked = False: .Nodes.Item(3).Checked = False: .Nodes.Item(4).Checked = False: .Nodes.Item(5).Checked = False: .Nodes.Item(6).Checked = False: .Nodes.Item(7).Checked = False: .Nodes.Item(8).Checked = False: .Nodes.Item(9).Checked = False: .Nodes.Item(10).Checked = False: .Nodes.Item(11).Checked = False: .Nodes.Item(12).Checked = False: .Nodes.Item(13).Checked = False: .Nodes.Item(14).Checked = False: .Nodes.Item(15).Checked = False: .Nodes.Item(16).Checked = False: .Nodes.Item(17).Checked = False
+.Nodes.Item(1).BackColor = &H8000000E: .Nodes.Item(2).BackColor = &H8000000E: .Nodes.Item(3).BackColor = &H8000000E: .Nodes.Item(4).BackColor = &H8000000E: .Nodes.Item(5).BackColor = &H8000000E: .Nodes.Item(6).BackColor = &H8000000E: .Nodes.Item(7).BackColor = &H8000000E: .Nodes.Item(8).BackColor = &H8000000E: .Nodes.Item(9).BackColor = &H8000000E: .Nodes.Item(10).BackColor = &H8000000E: .Nodes.Item(11).BackColor = &H8000000E: .Nodes.Item(12).BackColor = &H8000000E: .Nodes.Item(13).BackColor = &H8000000E: .Nodes.Item(14).BackColor = &H8000000E: .Nodes.Item(15).BackColor = &H8000000E: .Nodes.Item(16).BackColor = &H8000000E: .Nodes.Item(17).BackColor = &H8000000E
+.Nodes.Item(1).EnsureVisible: .Nodes.Item(2).EnsureVisible: .Nodes.Item(3).EnsureVisible: .Nodes.Item(4).EnsureVisible: .Nodes.Item(5).EnsureVisible: .Nodes.Item(7).EnsureVisible: .Nodes.Item(8).EnsureVisible: .Nodes.Item(9).EnsureVisible: .Nodes.Item(10).EnsureVisible
+.Nodes.Item(11).EnsureVisible: .Nodes.Item(12).EnsureVisible: .Nodes.Item(13).EnsureVisible: .Nodes.Item(14).EnsureVisible: .Nodes.Item(15).EnsureVisible: .Nodes.Item(16).EnsureVisible: .Nodes.Item(17).EnsureVisible
+End With
+'End If
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(2).Checked = True And Node = "1.1 Employee Upload") Then
+
+'txtresult.Text = Sheet2.Range("C40").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C40").Value
+
+With Me.TreeView1
+.Nodes.Item(2).Checked = True
+.Nodes.Item(2).BackColor = &HC0FFC0
+.Nodes.Item(2).EnsureVisible
+
+End With
+ElseIf (.Nodes.Item(2).Checked = False And Node = "1.1 Employee Upload") Then
+
+'txtresult.Text = ""
+
+'Txtfinal.Text = 0
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C40").Value
+
+With Me.TreeView1
+.Nodes.Item(2).Checked = False
+.Nodes.Item(2).BackColor = &H8000000E
+.Nodes.Item(2).EnsureVisible
+
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(3).Checked = True And Node = "1.2 Hazard Simple Upload") Then
+'txtresult.Text = Sheet2.Range("C41").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C41").Value
+
+With Me.TreeView1
+.Nodes.Item(3).Checked = True
+.Nodes.Item(3).BackColor = &HC0FFC0
+.Nodes.Item(3).EnsureVisible
+End With
+ElseIf (.Nodes.Item(3).Checked = False And Node = "1.2 Hazard Simple Upload") Then
+'txtresult.Text = Sheet2.Range("C41").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C41").Value
+
+With Me.TreeView1
+.Nodes.Item(3).Checked = False
+.Nodes.Item(3).BackColor = &H8000000E
+.Nodes.Item(3).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(4).Checked = True And Node = "1.3 Hazard Full Upload") Then
+
+'txtresult.Text = Sheet2.Range("C42").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C42").Value
+
+With Me.TreeView1
+.Nodes.Item(4).Checked = True
+.Nodes.Item(4).BackColor = &HC0FFC0
+.Nodes.Item(4).EnsureVisible
+End With
+ElseIf (.Nodes.Item(4).Checked = False And Node = "1.3 Hazard Full Upload") Then
+'txtresult.Text = Sheet2.Range("C42").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C42").Value
+
+With Me.TreeView1
+.Nodes.Item(4).Checked = False
+.Nodes.Item(4).BackColor = &H8000000E
+.Nodes.Item(4).EnsureVisible
+End With
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(5).Checked = True And Node = "1.4 Simple Incident Upload >=2 Years") Then
+
+'txtresult.Text = Sheet2.Range("C43").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C43").Value
+
+With Me.TreeView1
+.Nodes.Item(5).Checked = True
+.Nodes.Item(5).BackColor = &HC0FFC0
+.Nodes.Item(5).EnsureVisible
+End With
+ElseIf (.Nodes.Item(5).Checked = False And Node = "1.4 Simple Incident Upload >=2 Years") Then
+'txtresult.Text = Sheet2.Range("C43").Value
+
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C43").Value
+
+With Me.TreeView1
+.Nodes.Item(5).Checked = False
+.Nodes.Item(5).BackColor = &H8000000E
+.Nodes.Item(5).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+ElseIf (.Nodes.Item(6).Checked = True And Node = "1.5 Full incident Upload 2< Years") Then
+
+'txtresult.Text = Sheet2.Range("C44").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C44").Value
+With Me.TreeView1
+.Nodes.Item(6).Checked = True
+.Nodes.Item(6).BackColor = &HC0FFC0
+.Nodes.Item(6).EnsureVisible
+End With
+ElseIf (.Nodes.Item(6).Checked = False And Node = "1.5 Full incident Upload 2< Years") Then
+'txtresult.Text = Sheet2.Range("C44").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C44").Value
+
+With Me.TreeView1
+.Nodes.Item(6).Checked = False
+.Nodes.Item(6).BackColor = &H8000000E
+.Nodes.Item(6).EnsureVisible
+End With
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ElseIf (.Nodes.Item(7).Checked = True And Node = "1.6 Risk Register Upload") Then
+
+'txtresult.Text = Sheet2.Range("C45").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C45").Value
+
+
+With Me.TreeView1
+.Nodes.Item(7).Checked = True
+.Nodes.Item(7).BackColor = &HC0FFC0
+.Nodes.Item(7).EnsureVisible
+End With
+ElseIf (.Nodes.Item(7).Checked = False And Node = "1.6 Risk Register Upload") Then
+'txtresult.Text = Sheet2.Range("C45").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C45").Value
+
+With Me.TreeView1
+.Nodes.Item(7).Checked = False
+.Nodes.Item(7).BackColor = &H8000000E
+.Nodes.Item(7).EnsureVisible
+End With
+
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+ElseIf (.Nodes.Item(8).Checked = True And Node = "1.7 Full Risk Register Upload") Then
+
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C46").Value
+
+
+With Me.TreeView1
+.Nodes.Item(8).Checked = True
+.Nodes.Item(8).BackColor = &HC0FFC0
+.Nodes.Item(8).EnsureVisible
+End With
+ElseIf (.Nodes.Item(8).Checked = False And Node = "1.7 Full Risk Register Upload") Then
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C46").Value
+
+
+
+With Me.TreeView1
+.Nodes.Item(8).Checked = False
+.Nodes.Item(8).BackColor = &H8000000E
+.Nodes.Item(8).EnsureVisible
+End With
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ElseIf (.Nodes.Item(9).Checked = True And Node = "1.8 Training Course Upload") Then
+'txtresult.Text = Sheet2.Range("C47").Value
+
+
+
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C47").Value
+
+With Me.TreeView1
+.Nodes.Item(9).Checked = True
+.Nodes.Item(9).BackColor = &HC0FFC0
+.Nodes.Item(9).EnsureVisible
+End With
+ElseIf (.Nodes.Item(9).Checked = False And Node = "1.8 Training Course Upload") Then
+'txtresult.Text = Sheet2.Range("C47").Value
+
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C47").Value
+
+With Me.TreeView1
+.Nodes.Item(9).Checked = False
+.Nodes.Item(9).BackColor = &H8000000E
+.Nodes.Item(9).EnsureVisible
+End With
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+ElseIf (.Nodes.Item(10).Checked = True And Node = "1.9 Training Record Upload") Then
+'txtresult.Text = Sheet2.Range("C48").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C48").Value
+
+With Me.TreeView1
+.Nodes.Item(10).Checked = True
+.Nodes.Item(10).BackColor = &HC0FFC0
+.Nodes.Item(10).EnsureVisible
+End With
+ElseIf (.Nodes.Item(10).Checked = False And Node = "1.9 Training Record Upload") Then
+'txtresult.Text = Sheet2.Range("C48").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C48").Value
+
+
+With Me.TreeView1
+.Nodes.Item(10).Checked = False
+.Nodes.Item(10).BackColor = &H8000000E
+.Nodes.Item(10).EnsureVisible
+End With
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(11).Checked = True And Node = "1.10 Contractor Upload") Then
+
+'txtresult.Text = Sheet2.Range("C49").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C49").Value
+
+With Me.TreeView1
+.Nodes.Item(11).Checked = True
+.Nodes.Item(11).BackColor = &HC0FFC0
+.Nodes.Item(11).EnsureVisible
+End With
+ElseIf (.Nodes.Item(11).Checked = False And Node = "1.10 Contractor Upload") Then
+'txtresult.Text = Sheet2.Range("C49").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C49").Value
+
+
+
+
+With Me.TreeView1
+.Nodes.Item(11).Checked = False
+.Nodes.Item(11).BackColor = &H8000000E
+.Nodes.Item(11).EnsureVisible
+End With
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ElseIf (.Nodes.Item(12).Checked = True And Node = "1.11 Contractor Upload + Employees") Then
+
+'txtresult.Text = Sheet2.Range("C50").Value
+
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C50").Value
+
+With Me.TreeView1
+.Nodes.Item(12).Checked = True
+.Nodes.Item(12).BackColor = &HC0FFC0
+.Nodes.Item(12).EnsureVisible
+End With
+ElseIf (.Nodes.Item(12).Checked = False And Node = "1.11 Contractor Upload + Employees") Then
+'txtresult.Text = Sheet2.Range("C50").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C50").Value
+
+With Me.TreeView1
+.Nodes.Item(12).Checked = False
+.Nodes.Item(12).BackColor = &H8000000E
+.Nodes.Item(12).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(13).Checked = True And Node = "1.12 Simple Site Upload") Then
+
+'txtresult.Text = Sheet2.Range("C51").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C51").Value
+
+With Me.TreeView1
+.Nodes.Item(13).Checked = True
+.Nodes.Item(13).BackColor = &HC0FFC0
+.Nodes.Item(13).EnsureVisible
+End With
+ElseIf (.Nodes.Item(13).Checked = False And Node = "1.12 Simple Site Upload") Then
+'txtresult.Text = Sheet2.Range("C51").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C51").Value
+
+With Me.TreeView1
+.Nodes.Item(13).Checked = False
+.Nodes.Item(13).BackColor = &H8000000E
+.Nodes.Item(13).EnsureVisible
+End With
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(14).Checked = True And Node = "1.13 Full Site Information Upload") Then
+
+'txtresult.Text = Sheet2.Range("C52").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C52").Value
+
+With Me.TreeView1
+.Nodes.Item(14).Checked = True
+.Nodes.Item(14).BackColor = &HC0FFC0
+.Nodes.Item(14).EnsureVisible
+End With
+ElseIf (.Nodes.Item(14).Checked = False And Node = "1.13 Full Site Information Upload") Then
+'txtresult.Text = Sheet2.Range("C52").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C52").Value
+
+
+With Me.TreeView1
+.Nodes.Item(14).Checked = False
+.Nodes.Item(14).BackColor = &H8000000E
+.Nodes.Item(14).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(15).Checked = True And Node = "1.14 Reporting Line Re-upload (Scripted)") Then
+
+'txtresult.Text = Sheet2.Range("C53").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C53").Value
+
+With Me.TreeView1
+.Nodes.Item(15).Checked = True
+.Nodes.Item(15).BackColor = &HC0FFC0
+.Nodes.Item(15).EnsureVisible
+End With
+ElseIf (.Nodes.Item(15).Checked = False And Node = "1.14 Reporting Line Re-upload (Scripted)") Then
+'txtresult.Text = Sheet2.Range("C53").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C53").Value
+
+With Me.TreeView1
+.Nodes.Item(15).Checked = False
+.Nodes.Item(15).BackColor = &H8000000E
+.Nodes.Item(15).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(16).Checked = True And Node = "1.15 Site Re-upload (Scripted)") Then
+
+'txtresult.Text = Sheet2.Range("C54").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C54").Value
+
+With Me.TreeView1
+.Nodes.Item(16).Checked = True
+.Nodes.Item(16).BackColor = &HC0FFC0
+.Nodes.Item(16).EnsureVisible
+End With
+ElseIf (.Nodes.Item(16).Checked = False And Node = "1.15 Site Re-upload (Scripted)") Then
+'txtresult.Text = Sheet2.Range("C54").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C54").Value
+
+With Me.TreeView1
+.Nodes.Item(16).Checked = False
+.Nodes.Item(16).BackColor = &H8000000E
+.Nodes.Item(16).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(17).Checked = True And Node = "1.16 Obligation Register Upload") Then
+
+'txtresult.Text = Sheet2.Range("C55").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C55").Value
+
+
+
+With Me.TreeView1
+.Nodes.Item(17).Checked = True
+.Nodes.Item(17).BackColor = &HC0FFC0
+.Nodes.Item(17).EnsureVisible
+End With
+ElseIf (.Nodes.Item(17).Checked = False And Node = "1.16 Obligation Register Upload") Then
+'txtresult.Text = Sheet2.Range("C55").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C55").Value
+
+With Me.TreeView1
+.Nodes.Item(17).Checked = False
+.Nodes.Item(17).BackColor = &H8000000E
+.Nodes.Item(17).EnsureVisible
+End With
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+ElseIf (.Nodes.Item(18).Checked = True And Node = "Technical Integration") Then
+
+'lblnewslt.Caption = Sheet2.Range("C56").Value
+'txtresult.Text = Sheet2.Range("C56").Value
+
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C56").Value
+
+
+With Me.TreeView1
+.Nodes.Item(18).Checked = True
+.Nodes.Item(19).Checked = True
+.Nodes.Item(20).Checked = True
+.Nodes.Item(18).BackColor = &HC0FFC0
+.Nodes.Item(19).BackColor = &HC0FFC0
+.Nodes.Item(20).BackColor = &HC0FFC0
+.Nodes.Item(18).EnsureVisible
+.Nodes.Item(19).EnsureVisible
+.Nodes.Item(20).EnsureVisible
+End With
+ElseIf (.Nodes.Item(18).Checked = False And Node = "Technical Integration") Then
+'txtresult.Text = Sheet2.Range("C56").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C56").Value
+With Me.TreeView1
+.Nodes.Item(18).Checked = False
+.Nodes.Item(19).Checked = False
+.Nodes.Item(20).Checked = False
+.Nodes.Item(18).BackColor = &H8000000E
+.Nodes.Item(19).BackColor = &H8000000E
+.Nodes.Item(20).BackColor = &H8000000E
+.Nodes.Item(18).EnsureVisible
+.Nodes.Item(19).EnsureVisible
+.Nodes.Item(20).EnsureVisible
+
+End With
+
+
+ElseIf (.Nodes.Item(19).Checked = True And Node = "2.1 SSO Integration (ADFS, Azure AD, OCTA)") Then
+
+'lblnewslt.Caption = Sheet2.Range("C57").Value
+'txtresult.Text = Sheet2.Range("C57").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C57").Value
+
+With Me.TreeView1
+.Nodes.Item(19).Checked = True
+.Nodes.Item(19).BackColor = &HC0FFC0
+.Nodes.Item(19).EnsureVisible
+End With
+ElseIf (.Nodes.Item(19).Checked = False And Node = "2.1 SSO Integration (ADFS, Azure AD, OCTA)") Then
+'txtresult.Text = Sheet2.Range("C57").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C57").Value
+
+With Me.TreeView1
+.Nodes.Item(19).Checked = False
+.Nodes.Item(19).BackColor = &H8000000E
+.Nodes.Item(19).EnsureVisible
+End With
+
+ElseIf (.Nodes.Item(20).Checked = True And Node = "2.2 API Integration with Payroll system") Then
+
+'lblnewslt.Caption = Sheet2.Range("C58").Value
+'txtresult.Text = Sheet2.Range("C58").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C58").Value
+
+With Me.TreeView1
+.Nodes.Item(20).Checked = True
+.Nodes.Item(20).BackColor = &HC0FFC0
+.Nodes.Item(20).EnsureVisible
+End With
+ElseIf (.Nodes.Item(20).Checked = False And Node = "2.2 API Integration with Payroll system") Then
+'txtresult.Text = Sheet2.Range("C58").Value
+
+
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C58").Value
+
+With Me.TreeView1
+.Nodes.Item(20).Checked = False
+.Nodes.Item(20).BackColor = &H8000000E
+.Nodes.Item(20).EnsureVisible
+End With
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(21).Checked = True And Node = "UAT and Issue Resolution") Then
+
+'lblnewslt.Caption = Sheet2.Range("C59").Value
+'Txtimpliment.Text = Sheet2.Range("C59").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C59").Value
+
+With Me.TreeView1
+idx = .Nodes.Count
+'MsgBox idx
+'.Nodes.Item(28).Checked = True
+.Nodes.Item(21).Checked = True
+.Nodes.Item(22).Checked = True
+.Nodes.Item(23).Checked = True
+.Nodes.Item(24).Checked = True
+'= &HC0E0FF 'Node that was first selected
+'.Nodes.Item(28).BackColor = &HC0FFC0
+.Nodes.Item(21).BackColor = &HC0FFC0
+.Nodes.Item(22).BackColor = &HC0FFC0
+.Nodes.Item(23).BackColor = &HC0FFC0
+.Nodes.Item(24).BackColor = &HC0FFC0
+.Nodes.Item(21).EnsureVisible
+.Nodes.Item(22).EnsureVisible
+.Nodes.Item(23).EnsureVisible
+.Nodes.Item(24).EnsureVisible
+
+End With
+
+
+
+ElseIf (.Nodes.Item(21).Checked = False And Node = "UAT and Issue Resolution") Then
+
+'lblnewslt.Caption = Sheet2.Range("C59").Value
+'Txtimpliment.Text = Sheet2.Range("C59").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C59").Value
+
+'lblnewslt.Caption = ""
+
+
+
+With Me.TreeView1
+idx = .Nodes.Count
+'MsgBox idx
+'.Nodes.Item(28).Checked = True
+.Nodes.Item(21).Checked = False
+'= &HC0E0FF 'Node that was first selected
+'.Nodes.Item(28).BackColor = &HC0FFC0
+.Nodes.Item(22).Checked = False
+.Nodes.Item(23).Checked = False
+.Nodes.Item(24).Checked = False
+.Nodes.Item(21).BackColor = &H8000000E
+.Nodes.Item(22).BackColor = &H8000000E
+.Nodes.Item(23).BackColor = &H8000000E
+.Nodes.Item(24).BackColor = &H8000000E
+.Nodes.Item(21).EnsureVisible
+.Nodes.Item(22).EnsureVisible
+.Nodes.Item(23).EnsureVisible
+.Nodes.Item(24).EnsureVisible
+
+End With
+
+
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(22).Checked = True And Node = "1.1 UAT Training and Resolution") Then
+
+'lblnewslt.Caption = Sheet2.Range("C61").Value
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C61").Value
+
+With Me.TreeView1
+.Nodes.Item(22).Checked = True
+.Nodes.Item(22).BackColor = &HC0FFC0
+.Nodes.Item(22).EnsureVisible
+End With
+ElseIf (.Nodes.Item(22).Checked = False And Node = "1.1 UAT Training and Resolution") Then
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C61").Value
+
+With Me.TreeView1
+.Nodes.Item(22).Checked = False
+.Nodes.Item(22).BackColor = &H8000000E
+.Nodes.Item(22).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ElseIf (.Nodes.Item(23).Checked = True And Node = "1.2 Training for UAT (Performed by SDS)") Then
+
+'lblnewslt.Caption = Sheet2.Range("C62").Value
+
+
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C62").Value
+
+With Me.TreeView1
+.Nodes.Item(23).Checked = True
+.Nodes.Item(23).BackColor = &HC0FFC0
+.Nodes.Item(23).EnsureVisible
+End With
+ElseIf (.Nodes.Item(23).Checked = False And Node = "1.2 Training for UAT (Performed by SDS)") Then
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C62").Value
+
+With Me.TreeView1
+.Nodes.Item(23).Checked = False
+.Nodes.Item(23).BackColor = &H8000000E
+.Nodes.Item(23).EnsureVisible
+End With
+'>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ElseIf (.Nodes.Item(24).Checked = True And Node = "1.3 Issue resolution of issues raised during UAT") Then
+
+'lblnewslt.Caption = Sheet2.Range("C63").Value
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) + Sheet2.Range("C63").Value
+
+With Me.TreeView1
+.Nodes.Item(24).Checked = True
+.Nodes.Item(24).BackColor = &HC0FFC0
+.Nodes.Item(24).EnsureVisible
+End With
+ElseIf (.Nodes.Item(24).Checked = False And Node = "1.3 Issue resolution of issues raised during UAT") Then
+'txtresult.Text = Sheet2.Range("C46").Value
+Txtfinal.Text = CLng(Txtfinal.Text) - Sheet2.Range("C63").Value
+
+With Me.TreeView1
+.Nodes.Item(24).Checked = False
+.Nodes.Item(24).BackColor = &H8000000E
+.Nodes.Item(24).EnsureVisible
+End With
+
+
+
+End If
+End With
+End Sub
+
+Private Sub UserForm_Initialize()
+
+
+Frame14.Visible = False
+'lbltotalguide.Caption = Sheet2.Range("C66").Value + Sheet2.Range("C68").Value + Sheet2.Range("C69").Value + Sheet2.Range("C70").Value + Sheet2.Range("C71").Value + Sheet2.Range("C72").Value + Sheet2.Range("C73").Value + Sheet2.Range("C74").Value + Sheet2.Range("C75").Value + Sheet2.Range("C76").Value + Sheet2.Range("C77").Value + Sheet2.Range("C78").Value + Sheet2.Range("C67").Value + Sheet2.Range("C80").Value
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+ i = Sheet2.Range("C12").Value + Sheet2.Range("C85").Value ''<<
+'<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+txtmiconfig.Text = i
+'<<<<<<<<<<<<<<<<<<<<<<<<<<
+lbltrainAU.Caption = 0
+lblworkshp.Caption = 0
+
+
+If (chkselect.Value = True) Then
+optfullday.Value = True
+optfullday.Enabled = True
+opthalfday.Enabled = True
+Else
+optfullday.Enabled = False
+opthalfday.Enabled = False
+optfullday.Value = False
+End If
+
+
+
+Me.Height = 529.2
+Me.Width = 600
+'Me.Width = 914.4
+Framedoc.Visible = False
+Frame14.Visible = False
+'Txtbaseconfig.Text = 0
+'txtmultiplier.Text = 0
+'Txttraining.Text = 0
+
+'Txtwork.Text = 0
+'613.2
+lbltotalguide.Caption = 0
+
+Txtfinal.Text = 0
+
+
+Txtbaseconfig.Text = Sheet6.Range("E28").Value * 1.5
+
+
+Dim nod1, nod2, nod3, nod4, nod5, nod6, nod7, nod8, nod9, nod10, nod11, nod12, nod13, nod14 As MSComctlLib.Node
+TreeView1.Nodes.Clear
+With Me
+With .TreeView1.Nodes
+.Clear
+Set nod1 = .Add(, tvwNext, , "Data Uploads")
+Set nod2 = .Add(nod1.Index, tvwChild, , "1.1 Employee Upload")
+Set nod3 = .Add(nod1.Index, tvwChild, , "1.2 Hazard Simple Upload")
+Set nod4 = .Add(nod1.Index, tvwChild, , "1.3 Hazard Full Upload")
+Set nod5 = .Add(nod1.Index, tvwChild, , "1.4 Simple Incident Upload >=2 Years")
+Set nod6 = .Add(nod1.Index, tvwChild, , "1.5 Full incident Upload 2< Years")
+Set nod7 = .Add(nod1.Index, tvwChild, , "1.6 Risk Register Upload")
+Set nod8 = .Add(nod1.Index, tvwChild, , "1.7 Full Risk Register Upload")
+Set nod9 = .Add(nod1.Index, tvwChild, , "1.8 Training Course Upload")
+Set nod10 = .Add(nod1.Index, tvwChild, , "1.9 Training Record Upload")
+Set nod11 = .Add(nod1.Index, tvwChild, , "1.10 Contractor Upload")
+Set nod12 = .Add(nod1.Index, tvwChild, , "1.11 Contractor Upload + Employees")
+Set nod13 = .Add(nod1.Index, tvwChild, , "1.12 Simple Site Upload")
+Set nod14 = .Add(nod1.Index, tvwChild, , "1.13 Full Site Information Upload")
+Set nod15 = .Add(nod1.Index, tvwChild, , "1.14 Reporting Line Re-upload (Scripted)")
+Set nod16 = .Add(nod1.Index, tvwChild, , "1.15 Site Re-upload (Scripted)")
+Set nod17 = .Add(nod1.Index, tvwChild, , "1.16 Obligation Register Upload")
+Set nod18 = .Add(, tvwNext, , "Technical Integration")
+Set nod19 = .Add(nod18.Index, tvwChild, , "2.1 SSO Integration (ADFS, Azure AD, OCTA)")
+Set nod20 = .Add(nod18.Index, tvwChild, , "2.2 API Integration with Payroll system")
+Set nod21 = .Add(, tvwNext, , "UAT and Issue Resolution")
+Set nod22 = .Add(nod21.Index, tvwChild, , "1.1 UAT Training and Resolution")
+Set nod23 = .Add(nod21.Index, tvwChild, , "1.2 Training for UAT (Performed by SDS)")
+Set nod24 = .Add(nod21.Index, tvwChild, , "1.3 Issue resolution of issues raised during UAT")
+End With
+End With
+
+
+End Sub
+
+
+Private Sub DoNodeChangedState(Tree As MSComctlLib.TreeView, Node As MSComctlLib.Node, Optional DoingRecursion As Boolean)
+    If Not DoingRecursion Then SetAllChildren Tree, Node, Node.Checked
+    If IsRootNode(Node) Then Exit Sub
+    
+    Select Case True
+    Case AllSiblingsSame(Tree, Node)
+        Node.Parent.Checked = Node.Checked
+        DoNodeChangedState Tree, Node.Parent, True
+    Case Node.Checked
+               Node.Parent.Checked = Node.Checked
+        DoNodeChangedState Tree, Node.Parent, True
+    End Select
+End Sub
+
+Private Sub SetAllChildren(Tree As MSComctlLib.TreeView, Node As MSComctlLib.Node, Value As Boolean)
+   
+    Dim n As MSComctlLib.Node
+    
+    If Node.Children = 0 Then Exit Sub
+    
+    For Each n In Tree.Nodes
+        If Not IsRootNode(n) Then
+            If n.Parent.Index = Node.Index Then
+                n.Checked = Value
+                SetAllChildren Tree, n, Value
+            End If
+        End If
+    Next n
+End Sub
+
+
+
+Private Function AllSiblingsSame(Tree As MSComctlLib.TreeView, Node As MSComctlLib.Node) As Boolean
+    ' We check ourselves as well.
+    Dim n As MSComctlLib.Node
+    '
+    If IsRootNode(Node) Then Exit Function ' We don't do it on top nodes.
+    AllSiblingsSame = True
+    For Each n In Tree.Nodes
+        If Not IsRootNode(n) Then
+            If n.Parent.Index = Node.Parent.Index Then
+                If n.Checked <> Node.Checked Then
+                    AllSiblingsSame = False
+                    Exit Function
+                End If
+            End If
+        End If
+    Next n
+    ' If we fall out, they're all checked.
+End Function
+
+Private Function IsRootNode(Node As MSComctlLib.Node)
+    Dim i As Long
+    '
+    On Error GoTo IsRoot
+    i = Node.Parent.Index
+    Exit Function
+IsRoot:
+    IsRootNode = True
+End Function
